@@ -1,16 +1,18 @@
 ---
 layout: page
-title: About me
-subtitle: Why you'd want to go on a date with me
+title: About
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+# Background
+I'm a PhD student at the University of Pennsylvania within the Genomics and Compuatational Biology graduate group.
+I got my undergrad degree in bioinformatics from Baylor University while drinking Dr. Pepper floats and watching the bears.
 
-- I rock a great mustache
-- I'm extremely loyal to my family
+# Research
+My current research project is centered around [taking advantage of publicly available gene expression data with transfer learning](https://github.com/greenelab/whistl)
 
-What else do you need?
+In general, I'm interested in understanding the conditions under which information transfers between problems.
+The current paradigm of training a single model per problem has many applications, but doesn't appear to be how humans go about learning.
 
-### my history
-
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](https://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+# Hobbies
+I enjoy running along the Schuylkill River trail in Philly, and am currently training up to a marathon distance.
+I'm also a moderately competitive Smash Bros Ultimate player, a mostly retired swimmer, and a decent bass 2 singer.
