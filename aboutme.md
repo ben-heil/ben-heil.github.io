@@ -1,7 +1,6 @@
 ---
 layout: page
 title: About
-subtitle: More information about me
 ---
 
 # Background
