@@ -70,7 +70,7 @@ social-network-links:
   rss: true
   email: "benheil@pennmedicine.upenn.edu"
   github: ben-heil
-  twitter: ben_hi_ell
+  twitter: autobencoder
 #  reddit: yourname
 #  google-plus: +DeanAttali
   linkedin: ben-heil
@@ -90,7 +90,7 @@ share-links-active:
   twitter: true
   github: true
   linkedin: true
-  
+
 
 # How to display the link to the website in the footer
 # Remove this if you don't want a link in the footer
