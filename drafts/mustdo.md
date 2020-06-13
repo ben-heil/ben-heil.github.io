@@ -1,7 +1,7 @@
 ---
 layout: post
 title: How I Fail to Write Useful Code
-subtitle: Reproducible Research for Biologists Who Code Part 1: Must Do's
+subtitle: Reproducible Research for Biologists Who Code Part 1: Must Dos
 ---
 # Overview
 A genomicist friend of mine asked me what the best way to make sure code used for biological analyses would be useful for other people.
@@ -16,7 +16,7 @@ The past few years have been enough time to make a ton of mistakes, which will i
 That being said, this list is likely not comprehensive or entirely correct.
 If you disagree or have something to add, feel free to DM me on twitter or email me to tell me about how I'm wrong.
 
-# Must Do's
+# Must Dos
 ## Introduction
 To do reproducible research it is helpful to think about your code as a part of your methods section.
 There are a lot of small details that if omitted make your research difficult or impossible for others to reproduce.
@@ -45,8 +45,51 @@ I personally use Github, and a tutorial for how to do so is [here](https://guide
 
 If you aren't comfortable with the command line GitHub [has an app](https://desktop.github.com/) that keeps you from having to use it.
 
-## Data Access
+## Recording Data Access
+Keeping track of which data you use is surprisingly difficult in biological projects.
+In an idea world you would include the data that you used with your code, but large datasets and patient privacy make doing so difficult in many cases.
+Every case is different, and I don't have a single answer for the best way to make your data available.
+Instead, this section covers a number of options and considerations to think about.
 
+### Programmatically Accessing Data
+When working with publicly available data, you will likely have a website or other easy interface to download your data.
+I encourage you not to use it.
+
+If your dataset is contained in a single file, it is better to write a simple script like the one below to download it.
+By writing a download script instead of manually writing out instructions for how to find the file, you can ensure that someone reproducing your work has the same data.
+
+```bash
+#!/bin/bash
+
+curl <URL of the data file> -o <location you want the data to be saved to>
+```
+
+Datasets are often not a single file though.
+Not to fear, the websites providing such datasets typically have a way to interact with them programmatically!
+For example, the NCBI has an [API for accessing assorted genetic information](https://www.ncbi.nlm.nih.gov/books/NBK25501/).
+
+Taking the time to learn how to access data programmatically is a valuable investment.
+I've accidentally deleted entire directories on more than one occasion.
+Having my code backed up and a method to redownload data has led that to be a setback of a couple hours instead of a couple weeks.
+
+### Private Data
+Due to patient privacy regulations, you may generate data that you can't make publicly available.
+In these cases it is important to document in your [README file](#readme) precisely what data you used, when you accessed it.
+Failing to do so makes it difficult or impossible for others to reproduce your analysis.
+
+### Large Datasets
+It can be difficult to share data with others when you have generated a large dataset.
+[Zenodo](https://zenodo.org/) is the best way I know of.
+It's a free large datastore hosted by CERN explicitly for researchers to share code and data.
+You can also [get a DOI](https://guides.lib.berkeley.edu/citeyourcode#:~:text=Getting%20a%20DOI%20for%20your%20software%3A&text=Select%20a%20repository%20you%20want,the%20top%20of%20the%20page.) for your dataset and code, allowing others to cite your dataset even if it doesn't have an associated paper.
+
+[Git Large File Storage](https://git-lfs.github.com/) can also be used to keep your data with your code, but the free storage limit is a single gigabyte.
+If your data falls within that limit, you can use it to save the step of setting up a Zenodo record.
+You won't be able to get a DOI in that case though.
+
+### Further Reading
+Rachael Tatman has a [great guide](https://www.kaggle.com/rtatman/reproducible-research-best-practices-jupytercon) going deeper into how to structure your code and data.
+Her guide also contains a number of stylistic notes that might be useful and information on how to upload data to [Kaggle](kaggle.com), which is another place you can store your project.
 
 ## Libraries/Packages/Modules
 
@@ -54,6 +97,7 @@ If you aren't comfortable with the command line GitHub [has an app](https://desk
 
 ## Manual steps
 
+<a href #readme></a>
 ## README
 
 ## Publish your code
