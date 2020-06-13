@@ -91,9 +91,36 @@ You won't be able to get a DOI in that case though.
 Rachael Tatman has a [great guide](https://www.kaggle.com/rtatman/reproducible-research-best-practices-jupytercon) going deeper into how to structure your code and data.
 Her guide also contains a number of stylistic notes that might be useful and information on how to upload data to [Kaggle](kaggle.com), which is another place you can store your project.
 
-## Libraries/Packages/Modules
+## Library Management
+
 
 ## Random seeds
+Many algorithms ubiquitous in biology use randomness so that they finish running prior to the heat death of the universe.
+While such efficiency is a desirable property in a program, it also causes different results each time the program is run.
+Thankfully random number generators on computers aren't truly random, they [draw from a list of pseudorandom numbers](https://en.wikipedia.org/wiki/Mersenne_Twister).
+As a result, you can pick a location on that list to start picking numbers from.
+This location is called a random seed.
+
+How to set your random seeds depends on the program.
+Often standalone programs will have an option to set their seed via a command line argument.
+In Python, you can set your random seeds with the code below, though be aware that many libraries like numpy will require their own seeds to be set.
+
+```python
+import random
+
+random.seed(42)
+```
+
+In R, you set random seed as follows:
+
+```R
+set.seed(42)
+```
+
+This might seem like an inconsequential thing, but it is nearly impossible to reproduce the results of your research if you don't know the random seed.
+Pixar actually [ran into this problem](https://www.tested.com/art/movies/449542-finding-nemo-3d-interview/) when converting Finding Nemo into 3D,
+so if you're waffling on whether to set all your random seeds, just do it for Nemo.
+
 
 ## Manual steps
 
