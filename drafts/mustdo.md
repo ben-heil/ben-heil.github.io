@@ -1,7 +1,7 @@
 ---
 layout: post
-title: How I Fail to Write Useful Code
-subtitle: Reproducible Research for Biologists Who Code Part 1: Must Dos
+title: Reproducible Programming for Biologists Who Code
+subtitle: Part 1: Must Dos
 ---
 # Overview
 A genomicist friend of mine asked me what the best way to make sure code used for biological analyses would be useful for other people.
@@ -36,11 +36,11 @@ If I spent the few extra seconds to commit my code, I could have saved hours of 
 From a reproducibility perspective, version control lets people run the same code you ran.
 Even if you change your code later, you can specify a timestamp or commit to show people the exact analysis you ran.
 
-### Further Reading
+#### Further Reading
 Atlassian has good tutorials for [how to set up and use git as a version control system.](https://www.atlassian.com/git/tutorials/setting-up-a-repository)
 
 Hosting your code in the cloud leads to easier backups and sharing.
-[GitHub](github.com), [GitLab](https://about.gitlab.com/), and [BitBucket](https://bitbucket.org/product) are all good ways to do this.
+[GitHub](https://github.com), [GitLab](https://about.gitlab.com/), and [BitBucket](https://bitbucket.org/product) are all good ways to do this.
 I personally use Github, and a tutorial for how to do so is [here](https://guides.github.com/activities/hello-world/).
 
 If you aren't comfortable with the command line GitHub [has an app](https://desktop.github.com/) that keeps you from having to use it.
@@ -87,9 +87,9 @@ You can also [get a DOI](https://guides.lib.berkeley.edu/citeyourcode#:~:text=Ge
 If your data falls within that limit, you can use it to save the step of setting up a Zenodo record.
 You won't be able to get a DOI in that case though.
 
-### Further Reading
+#### Further Reading
 Rachael Tatman has a [great guide](https://www.kaggle.com/rtatman/reproducible-research-best-practices-jupytercon) going deeper into how to structure your code and data.
-Her guide also contains a number of stylistic notes that might be useful and information on how to upload data to [Kaggle](kaggle.com), which is another place you can store your project.
+Her guide also contains a number of stylistic notes that might be useful and information on how to upload data to [Kaggle](https://www.kaggle.com), which is another place you can store your project.
 
 ## Library Management
 
@@ -121,10 +121,26 @@ This might seem like an inconsequential thing, but it is nearly impossible to re
 Pixar actually [ran into this problem](https://www.tested.com/art/movies/449542-finding-nemo-3d-interview/) when converting Finding Nemo into 3D,
 so if you're waffling on whether to set all your random seeds, just do it for Nemo.
 
-
 ## Manual steps
+A few weeks ago someone opened an issue on one of my github repositories.
+Their comment said something to the effect of "Your code opens a file with this function, but that shouldn't work if the file is actually in the format you stated."
+Upon examining the code I realized that they were correct, my code shouldn't work.
+I then had to think back to design decisions I had made four years prior to figure out why I did what I did.
+It turns out that I had written a one-liner to convert the format of all my data files, but never bothered to record it as a script.
+
+Don't be like Ben circa 2016.
+Even if something is easy enough to do that it only takes a single command line command, it should probably be made into a bash script.
+Doing so makes it possible for others to reproduce your analysis, and saves you from having to remember things that you did years in the past.
+
 
 <a href #readme></a>
 ## README
 
 ## Publish your code
+"Code available upon request" is equivalent to saying "Methods section available upon request".
+Unless every detail of your implementation is written into your methods section, without your code it isn't possible to reproduce your analysis.
+Thankfully, platforms like [GitHub](https://www.github.com) and [BitBucket](https://www.bitbucket.com) make it free and easy to publish your code.
+
+#### Further Reading
+- [A guide to uploading code to GitHub](https://help.github.com/en/github/importing-your-projects-to-github/adding-an-existing-project-to-github-using-the-command-line)
+- [A guide to uploading code to BitBucket](https://confluence.atlassian.com/get-started-with-bitbucket/push-code-to-bitbucket-861185309.html)
