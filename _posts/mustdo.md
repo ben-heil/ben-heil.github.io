@@ -2,6 +2,7 @@
 layout: post
 title: Reproducible Programming for Biologists Who Code
 subtitle: Part 1: Must Dos
+date: 2020-06-17
 ---
 # Overview
 A genomicist friend of mine asked me what the best way to make sure code used for biological analyses would be useful for other people.
