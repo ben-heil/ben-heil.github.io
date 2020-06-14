@@ -91,7 +91,43 @@ You won't be able to get a DOI in that case though.
 Rachael Tatman has a [great guide](https://www.kaggle.com/rtatman/reproducible-research-best-practices-jupytercon) going deeper into how to structure your code and data.
 Her guide also contains a number of stylistic notes that might be useful and information on how to upload data to [Kaggle](https://www.kaggle.com), which is another place you can store your project.
 
+<a href #packages></a>
 ## Library Management
+Installing libraries (or packages or modules, depending on your language of choice) is a great way to add functionality to your code without having to implement it yourself.
+Most analyses will use libraries not installed by default.
+Consequently, it is necessary to specify the location and versions of these packages.
+The best way to do so is language dependant, and I'll cover Python and R since they're the most commonly used languages in biology.
+
+### Python
+There are two main schools of thought in Python package management.
+One uses [venv](https://docs.python.org/3/library/venv.html) and [pip](https://pypi.org/project/pip/) to handle dependencies.
+Under this system packages are installed using pip and which packages are used is determined by the current venv virtual environment.
+There are [good](https://www.dabapps.com/blog/introduction-to-pip-and-virtualenv-python/) [tutorials](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/)
+on how to use venv and pip, so I won't go over that here.
+The key part for reproducibility is the requirements.txt file.
+The [requirements.txt](https://note.nkmk.me/en/python-pip-install-requirements/) file lists which versions of which packages you are using, allowing others to install the same libraries with a single `pip install -r requirements.txt` command.
+
+The second school combines virtual environments and package installation together into a single tool called [Anaconda](https://www.anaconda.com/products/individual).
+In addition to combining two tools together, Anaconda also has the ability to manage your R and Python packages simultaneously (sometimes).
+Again, there are many tutorials on exactly [how to use Anaconda](https://docs.anaconda.com/anaconda/navigator/tutorials/) so I won't get into it.
+The part to pay attention to for the sake of reproducibility is the environment.yml file, which plays the same role that the requirements.txt file did in pip.
+
+Regardless of which system you choose, the important part is that you keep the file containing your package information up to date.
+Ideally, before you publish your code you should reinstall all your packages onto another computer or virtual environment and make sure everything still runs.
+
+### R
+I am by no means an expert on R.
+That being said, I will frequently find myself needing to use libraries from R in a largely python-based analysis.
+While Anaconda works well for me, it can be difficult to find the correct channels for R libraries.
+If your project is entirely R-based, a more R-oriented package manager might be better.
+
+As far as I can tell, [Packrat](https://rstudio.github.io/packrat/) seems to be the best one.
+It keeps track of which libraries you have installed in a given directory, and allows you to share the library information and your code with the `packrat::bundle()` command.
+Details on its usage can be found [on its website](https://rstudio.github.io/packrat/walkthrough.html).
+
+#### Further Reading
+- If you don't want to use the command line, [Anaconda Navigator](https://docs.anaconda.com/anaconda/navigator/) is a graphical user interface that lets you do the same things as standard Anaconda.
+- If you're an RStudio user, [this tutorial](https://rstudio.github.io/packrat/rstudio.html) on Packrat will probably be more useful to you than the one linked above.
 
 
 ## Random seeds
@@ -103,7 +139,7 @@ This location is called a random seed.
 
 How to set your random seeds depends on the program.
 Often standalone programs will have an option to set their seed via a command line argument.
-In Python, you can set your random seeds with the code below, though be aware that many libraries like numpy will require their own seeds to be set.
+In Python, you can set your random seeds with the code below, though be aware that many libraries like NumPy will require their own seeds to be set.
 
 ```python
 import random
@@ -122,7 +158,7 @@ Pixar actually [ran into this problem](https://www.tested.com/art/movies/449542-
 so if you're waffling on whether to set all your random seeds, just do it for Nemo.
 
 ## Manual steps
-A few weeks ago someone opened an issue on one of my github repositories.
+A few weeks ago someone opened an issue on one of my GitHub repositories.
 Their comment said something to the effect of "Your code opens a file with this function, but that shouldn't work if the file is actually in the format you stated."
 Upon examining the code I realized that they were correct, my code shouldn't work.
 I then had to think back to design decisions I had made four years prior to figure out why I did what I did.
@@ -135,6 +171,17 @@ Doing so makes it possible for others to reproduce your analysis, and saves you 
 
 <a href #readme></a>
 ## README
+In a lot of ways your code is a crystallization of your thought process.
+While this makes coding beautiful as an art form, it also means that how to use your code may not be immediately apparent to others.
+The standard way to help bridge the gap between your thoughts and others' is to provide an instruction manual called a README.
+A barebones README should contain three things:
+
+1. A description of what the project does
+2. Instructions on how to install the dependencies for your code (which will be easier if you [use some type of package manager](#packages)
+3. Instructions on how to reproduce your analysis (which scripts to run, how, and in which order)
+
+There are more sections that can be added to a README, which will be covered in future posts.
+For now though, the three components listed above are critical for others to be able to run your code.
 
 ## Publish your code
 "Code available upon request" is equivalent to saying "Methods section available upon request".
