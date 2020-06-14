@@ -98,7 +98,7 @@ url-pretty: "ben-heil.github.io"
 # --- Web Statistics Section --- #
 
 # Fill in your Google Analytics gtag.js ID to track your website using gtag
-#gtag: ""
+gtag: "UA-169392828-1"
 
 # Fill in your Google Analytics ID to track your website using GA
 #google_analytics: ""
