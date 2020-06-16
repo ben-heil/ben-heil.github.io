@@ -1,6 +1,8 @@
 ---
 layout: page
 title: About
+show-avatar: true
+cover-img: "/assets/img/fall_trees.jpg"
 ---
 
 # Background
