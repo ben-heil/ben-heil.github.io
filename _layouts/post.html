@@ -38,7 +38,7 @@ layout: base
 		<h3>BibTex Citation:</h3>
 		{% capture post_year %}{{ page.date | date: "%Y" }}{% endcapture %}
 		{% capture post_month %}{{ page.date | date: "%m" }}{% endcapture %}
-		<code>@misc{Heil, title=&#123;{{page.title}} - {{page.subtitle}}}, url=&#123;{{site.url}}{{page.url}}}, journal={AutoBenCoding},
+		<code>@misc{Heil_{{post_year}}, title=&#123;{{page.title}} - {{page.subtitle}}}, url=&#123;{{site.url}}{{page.url}}}, journal={AutoBenCoding},
 			author={Heil, Benjamin J.}, year=&#123;{{post_year}}}, month=&#123;{{post_month}}}}</code>
 	  	{% endif %}
       </article>
