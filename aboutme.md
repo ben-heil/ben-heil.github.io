@@ -10,7 +10,7 @@ I'm a PhD student at the University of Pennsylvania within the Genomics and Comp
 I got my undergrad degree in bioinformatics from Baylor University while drinking Dr. Pepper floats and watching the bears.
 
 # Research
-My current research project is centered around [taking advantage of publicly available gene expression data with transfer learning](https://github.com/greenelab/whistl)
+My current research project is centered around [taking advantage of publicly available gene expression data with transfer learning](https://github.com/greenelab/whistl).
 
 In general, I'm interested in understanding the conditions under which information transfers between problems.
 The current paradigm of training a single model per problem has many applications, but doesn't appear to be how humans go about learning.
