@@ -30,6 +30,31 @@ python classes implementing models and classes respectively.
 I had already had a planning meeting with other project stakeholders, so I had a good idea of [what functionality would be required](https://github.com/greenelab/saged/issues/3#issue-646243304).
 
 ## Defining Datasets
+In order to get the datasets to work with all types of models, they have the same required functions as [pytorch datasets](https://pytorch.org/docs/stable/data.html#dataset-types).
+They also need to be able to return all the data in the dataset to work with scikit-learn models.
+Finally, since some of my data is labeled and some isn't, I knew I would need different classes to handle the two types.
+
+My initial design for the datasets had a [base class](https://docs.python.org/3/glossary.html#term-abstract-base-class) called [ExpressionDataset](https://github.com/greenelab/saged/blob/a8a89d36873c79fa1cdd6ad8ee893d18f3633747/saged/datasets.py#L13)
+which defined the functions that all dataset classes were expected to have.
+It then had [LabeledDataset](https://github.com/greenelab/saged/blob/a8a89d36873c79fa1cdd6ad8ee893d18f3633747/saged/datasets.py#L178) and [UnlabeledDataset](https://github.com/greenelab/saged/blob/a8a89d36873c79fa1cdd6ad8ee893d18f3633747/saged/datasets.py#L220)
+classes outlining the functions that labeled and unlabeled datasets would need that the other wouldn't.
+Finally, I put the actual logic into [RefineBioUnlabeledDataset](https://github.com/greenelab/saged/blob/a8a89d36873c79fa1cdd6ad8ee893d18f3633747/saged/datasets.py#L249)
+and [RefineBioLabeledDataset](https://github.com/greenelab/saged/blob/a8a89d36873c79fa1cdd6ad8ee893d18f3633747/saged/datasets.py#L674), each of which inherited from their corresponding base classes.
+To clarify the name, the expresion compendium I'm working with comes from [refine.bio](refine.bio).
+
+## Why So Many Base Classes?
+
+If you're unfamiliar with object oriented programming, all the machinery may seem like overkill to you.
+And to be fair, there are around 250 lines of code and comments in the [datasets file](https://github.com/greenelab/saged/blob/a8a89d36873c79fa1cdd6ad8ee893d18f3633747/saged/datasets.py) that
+don't actually do any work.
+There are two advantages of putting in the effort for all these base classes though.
+
+First, I expect to add datasets other than the [refine.bio](refine.bio) compendium in the future.
+By designing base classes with typed function signatures, I know exactly what the future dataset classes will need to do.
+Python will even throw an error telling me which functions I didn't implement I forget something.
+
+Second, having a set [API](https://francescolelli.info/programming/how-to-design-a-good-api-advanced-object-oriented-programming/) makes testing easier.
+Since I know exactly what functions each class will implement and what their inputs and outputs should be, I can use the same test cases for multiple classes.
 
 ## Unifying Models
 Very early on in implementing that design I realized that it would be hard to get models to behave uniformly.
