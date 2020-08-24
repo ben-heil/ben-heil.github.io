@@ -12,7 +12,7 @@ While it is nice to have a CI service in the same place as your code, there are 
 
 In particular, there are no tutorials of how to use Github Actions in repos that manager their dependencies with [Conda](https://docs.conda.io/en/latest/) environments.
 There are [several actions](https://github.com/marketplace?query=conda) in the [Marketplace](https://github.com/marketplace) that are designed to perform various tasks with Conda,
-but miniconda [is already installed on Github Actions runners](https://docs.github.com/en/actions/reference/software-installed-on-github-hosted-runners) so they aren't strictly necessary.
+but Miniconda [is already installed on Github Actions runners](https://docs.github.com/en/actions/reference/software-installed-on-github-hosted-runners) so they aren't strictly necessary.
 
 This post has three parts.
 [First](#parts) it explains the different parts of a Github Action and what they do.
@@ -177,7 +177,7 @@ The first line installs flake8 into the base environment.
 The next line throws errors for specific code issues, then the following line runs the full linter to print any style issues.
 
 If this were a normal machine you'd be able to call `flake8` here without specifying a path.
-Because Github Actions runners ignore shell profiles, you have to specify the path from the conda directory instead.
+Because Github Actions runners ignore shell profiles, you have to specify the path from the Conda directory instead.
 Alternatively you can use `shell: bash -l {0}` for the step [which should make the path](https://github.community/t/how-to-share-shell-profile-between-steps-or-how-to-use-nvm-rvm-in-steps/16398)
 to flake8 available.
 
@@ -205,7 +205,7 @@ There's nothing new in this step, so the section will conclude with the full ima
 
 <a id="examples"></a>
 ## Examples of Conda Actions
-This section contains basic conda actions that can be used in Ubuntu/Macos and Windows.
+This section contains basic Conda actions that can be used in Ubuntu/Macos and Windows.
 I wrote them, but a lot of the idiosyncracies and pieces of the implementation come from information people dug up in [this thread](https://github.com/actions/starter-workflows/issues/44).
 If you're looking to write custom workflows, you'll probably want to read through the thread to better understand what's going on.
 
