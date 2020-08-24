@@ -142,13 +142,13 @@ jobs:
 ```
 The first thing to notice here is the `run` keyword, which executes commands in a shell.
 Which shell is being run depends on the operating system for the job, though it can be specified manually with [the `shell` keyword](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#using-a-specific-shell).
-Since this action uses ubuntu, the shell defaults to bash.
+Because this action uses ubuntu, the shell defaults to bash.
 
 This is also the first conda specific step.
 The `$CONDA` environment variable is present across environments and points to the miniconda root directory for the virtual machine.
 Typical Conda usage to install an environment from a file would be something like `conda env create -f environment.yml`.
 Unfortunately, environment variables don't persist between steps in a workflow, which breaks some things in conda.
-Installing the environment's packages into the base environment avoids this issue since the packages are available by default.
+Installing the environment's packages into the base environment avoids this issue because the packages are available by default.
 
 ```
 name: Python Package Using Anaconda
@@ -261,7 +261,7 @@ jobs:
         $CONDA/bin/pytest
 ```
 
-This action is based off the [python-package github action](https://github.com/actions/starter-workflows/blob/main/ci/python-package.yml).
+The action above is based off the [python-package github action](https://github.com/actions/starter-workflows/blob/main/ci/python-package.yml).
 It is also listed in the [Github starter workflows](https://github.com/actions/starter-workflows) directory as `python-package-conda`.
 Since it's discussed in depth in the first section, I'll avoid going into too much detail here.
 
@@ -307,8 +307,18 @@ The `CONDA` variable still exists in windows, I just don't know powershell well 
 
 <a id="marketplace"></a>
 ## Using Actions from the Marketplace
+There are a number of actions in [the marketplace](https://github.com/marketplace) that set up conda environments.
+Now that you've seen the complexity of coordinating conda paths on the virtual machines though it's apparent that a marketplace action might be useful.
+As far as I can tell, the best one is [setup-miniconda](https://github.com/marketplace/actions/setup-miniconda).
+There are examples of how to invoke it on their main page, but not a comparable workflow, so I went ahead and [added one below](#miniconda).
 
+The setup-miniconda action installs miniconda each time it is run, which I expected to negatively impact performance.
+To measure the performance differences, I set up a [simple repository](https://github.com/ben-heil/github_actions_test) then ran my example actions above against the example action below.
+Surprisingly, setup-miniconda [ran around as fast as the example actions](https://github.com/ben-heil/github_actions_test/actions).
+I imagine setup-miniconda would work even better in a more complicated test setup since it has options for [caching libraries](https://github.com/marketplace/actions/setup-miniconda#caching)
+and [using the mamba package manager](https://github.com/marketplace/actions/setup-miniconda#example-6-mamba).
 
+<a id="miniconda"></a>
 {% raw %}
 ```
 name: Use Setup-Miniconda From Marketplace
@@ -346,3 +356,4 @@ jobs:
             pytest
 ```
 {% endraw %}
+
