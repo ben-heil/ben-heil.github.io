@@ -318,6 +318,9 @@ Surprisingly, setup-miniconda [ran around as fast as the example actions](https:
 I imagine setup-miniconda would work even better in a more complicated test setup since it has options for [caching libraries](https://github.com/marketplace/actions/setup-miniconda#caching)
 and [using the mamba package manager](https://github.com/marketplace/actions/setup-miniconda#example-6-mamba).
 
+If your use case for github actions is limited in scope or you have a strong aversion to external dependencies in your code, then you may want to avoid marketplace actions.
+Otherwise using something like setup-miniconda will likely make your life easier.
+
 <a id="miniconda"></a>
 {% raw %}
 ```
@@ -356,4 +359,10 @@ jobs:
             pytest
 ```
 {% endraw %}
+
+## Conclusion
+Hopefully this post was helpful!
+If you're interested in learning more about how github actions works, I highly recommend taking a look at [the reference](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions).
+
+As always, if you notice anything wrong or missing, let me know about it [on Twitter](https://twitter.com/autobencoder).
 
