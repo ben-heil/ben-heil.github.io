@@ -12,7 +12,7 @@ citable: true
 When I look at large projects' repositories, I find myself wondering how the authors decided how all the code fit together.
 Likewise, when I was starting my transcriptional [model benchmarking project](https://github.com/greenelab/saged)
 I was unable to find any articles on best practices for projects with lots of machine learning models and datasets.
-This article is a response to both problems.
+While I don't consider myself an expert software engineer, I put together this post to explain how I think about designing a software project.
 
 I will do my best to explain the iterations I went through that led me to my current project structure, the reasoning behind the structures, and the places I got ideas from.
 
@@ -64,9 +64,28 @@ Unfortunately while the `fit` and `predict` methods for both classes could take 
 I decided I would address the extra parameters with logic in the calling code, and moved on to create unsupervised models.
 
 ## Unsupervised Models
+I created the PCA model in much the same way.
+I started by creating an [UnsupervisedModel](https://github.com/ben-heil/saged/blob/3c7dcaf193069558207caee41976b26b47151fd2/saged/models.py#L511) abstract class, then implemented the PCA class itself.
+I assumed that because the PCA class was another sklearn wrapper, it was pretty easy to get it to operate on UnlabeledDatasets from earlier.
 
+## Writing The First Benchmark Script
+Around this point in the implementation process I found myself struggling to nail down implementation details for the models and datasets.
+Since I didn't know exactly how they were going to be used, it was hard to decide how they should interface with the outside world.
+I decided to change tacks and start working on the analysis logic for the benchmarks.
+In doing so, I realized that the way I was handling model creation wouldn't work since I wanted the models to be initialized with the same calling code.
+The difference in parameters required in different models would make the calling code too complex if I continued down the current path so I needed a different system.
 
-## Defining Benchmarks
+I remembered looking at a project that used [allennlp config files](https://docs.allennlp.org/v1.0.0rc3/tutorials/getting_started/walk_through_allennlp/configuration/), and decided to copy that style.
+Instead of trying to force each model to have the same parameters passed in, I moved all the information necessary to create an instance of a model to [yml config files](https://github.com/ben-heil/saged/tree/0030174a8166758aa0696d0606579e84e495e2e8/model_configs).
+For the sake of consistency I also wrote functions so the dataset objects could be initialized from config files.
+
+The clear set of requirements in the benchmark script also made me realize that life would be much easier if I had more dataset utility functions and a dataset type that could hold both labeled and unlabeled data.
+I [overhauled the datasets again](https://github.com/greenelab/saged/pull/10/files#diff-23f36de1d9afe152075c89a03c204d66) to make that dream a reality.
+
+Actually writing a script to run an analysis gave a lot of focus to what the design should be for the rest of the project.
+I wish I had done it sooner, or even started development by creating a script full of function stubs.
 
 ## Tying Everything Together
-
+The config file system finally gave my project the modularity I was looking for.
+The models and datasets were swappable without much effort, and they could be selected by individual command line arguments.
+All that was left was to find a way [to run everything with one button press](https://ben-heil.github.io/2020-06-30-shoulddo/#button).
