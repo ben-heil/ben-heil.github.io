@@ -3,7 +3,6 @@ layout: post
 title: Deep Learning for Biologists Workshop
 description: Information for an upcoming workshop
 cover-img: "/assets/img/far_philly.jpg"
-citable: true
 ---
 
 My labmate [Alex Lee](https://www.greenelab.com/members/alex-lee.html) and I are putting on a virtual deep learning workshop!
@@ -27,8 +26,12 @@ A presentation of the potential applications of convolutional neural networks, t
 A demonstration of convolutional neural networks outside of image data.
 This demo shows that CNNs can be used to [predict noncoding variants' effects](https://www.nature.com/articles/nmeth.3547) and how to use preexisting models from [Kipoi](https://kipoi.org/).
 
-
 ### October PLACEHOLDER:
+**Gene Expression Models - PLACEHOLDER PM EST**:  
+A presentation about the motivation for applying DL methods to gene expression datak, the concepts behind these methods, and findings from a [publication](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5728678/) that uses variational autoencoders to extract patterns from gene expression data.
+
+**Recurrent Neural Networks -- PLACEHOLDER PM EST**:  
+A presentation about the motivation for using recurrent neural networks, the assumptions made by RNNs, and findings from a [publication](https://arxiv.org/pdf/1605.00017.pdf) that uses an LSTM to identify miRNAs.
 
 ## Sign-up
 If you would like to receive a link to the workshop and the lecture materials, sign up [here](PLACEHOLDER)!
