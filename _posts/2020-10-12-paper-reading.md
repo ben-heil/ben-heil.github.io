@@ -1,7 +1,7 @@
 ---                                                                                                                                                                                                         
 layout: post                                                                                                                                                                                                
 title: How to read Bio ML Papers
-description: The things to look for in comp bio papers using machine learning
+description: The things to look for in comp bio papers that use machine learning
 cover-img: "/assets/img/river_trail.jpg"                                                                                                                                                                    
 ---
 
@@ -34,7 +34,7 @@ If that condition holds, then the test set performance is an estimate for how we
 ## Data Splitting (Inter-study differences accounted for)
 The previous section was probably obvious to people coming from a machine learning background.
 Interestingly, determining the train/test/validation sets by randomly selecting samples from the dataset often fails in biology.
-As stated previously, the seperation between the validation/testing sets and the training data is what allows them to be useful estimators of performance.
+As stated previously, the separation between the validation/testing sets and the training data is what allows them to be useful estimators of performance.
 If you split data at the per-sample level, however, you'll end up leaking data between those sets.
 
 For example, I work with [gene expression data](https://github.com/ben-heil/whistl/blob/master/notebook/data_exploration/compendium_eda.ipynb), where batch effects are very pronounced.
@@ -48,13 +48,20 @@ Then, when the model is applied to new studies it would take a huge performance 
 This type of issue is called [data leakage](https://www.kaggle.com/dansbecker/data-leakage).
 
 ## Data Leakage
-- Preprocessing on all data (cite Jacob)
+Data leakage occurs when the training set gives the model information about the testing set that the model won't have when applied to new data.
+When working with biological data, data leakage frequently occurs when performing a preprocessing step on all the data jointly instead of on the training and testing data separately.
+
+There are a number of ways in which data leakage can happen. 
+For a more in depth description, Jacob Schreiber gives a great explanation and example in [this twitter thread](https://twitter.com/jmschreiber91/status/1291161574393221123).
+
 
 ## Base Rate
 
 ## Correct metrics used
 
 ## Comparison to known biology
+
+## Comparison to baseline model
 
 ## Reasonable model assumptions
 
