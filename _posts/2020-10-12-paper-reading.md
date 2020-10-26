@@ -85,9 +85,17 @@ For example, if a model is predicting variant pathogenicity, it should probably 
 Complex machine learning models [don't necessarily outperform logistic regression](https://www.sciencedirect.com/science/article/abs/pii/S0895435618310813).
 To justify the decrease in interpretability that comes with a more complex model, papers need to demonstrate that their model performs better than simple logistic regression/random forest models.
 
+## Comparison to prior work
+If other models have been developed to do the same thing, it's important to show that the new model adds value to the problem.
+It doesn't necessarily need to be higher performing, but if it's not it should have some redeeming feature like interpretability or efficiency.
+
 
 ## Author Degrees of Freedom 
 - Cite Arjun (or https://www.danielnettle.org.uk/2019/10/01/the-view-from-the-top-of-the-hierarchy-of-evidence/)?
 
+
 ## Reasonable model assumptions
+Deep learning models in particular have strong assumptions about the data they're operating on baked into their architecture.
+If a paper is using a convolutional neural network, it should be clear why proximity in feature space is important.
+Likewise, if a paper is using a recurrent neural network, it should be clear why the order of the sequence matters.
 
