@@ -54,6 +54,7 @@ When working with biological data, data leakage frequently occurs when performin
 There are a number of ways in which data leakage can happen. 
 For a more in depth description, Jacob Schreiber gives a great explanation and example in [this twitter thread](https://twitter.com/jmschreiber91/status/1291161574393221123).
 
+
 ## IID Assumption
 Machine learning makes the (big) assumption that the data used is [independently and identically distributed](https://stats.stackexchange.com/questions/213464/on-the-importance-of-the-i-i-d-assumption-in-statistical-learning).
 This assumption is typically mentioned to explain that the test set [should look like the training set](https://www.cs.princeton.edu/courses/archive/spring16/cos495/slides/ML_basics_lecture1_linear_regression.pdf), it should also be the case that the test set has the same distribution as the real world data.
@@ -90,8 +91,10 @@ If other models have been developed to do the same thing, it's important to show
 It doesn't necessarily need to be higher performing, but if it's not it should have some redeeming feature like interpretability or efficiency.
 
 
-## Author Degrees of Freedom 
-- Cite Arjun (or https://www.danielnettle.org.uk/2019/10/01/the-view-from-the-top-of-the-hierarchy-of-evidence/)?
+## Multiple Comparison Correction
+I'm using the idea of [multiple comparison correction](https://mathworld.wolfram.com/BonferroniCorrection.html) less formally than the statistical version.
+When performing comparisons to baseline models or prior work, authors often use models that aren't theirs without tuning them.
+While this is fine if they aren't tuning their own model, if their model is chosen from a set of 50 hyperparameter configurations then the models they are comparing against should also receive similar hyperparameter sweeps.
 
 
 ## Reasonable model assumptions
