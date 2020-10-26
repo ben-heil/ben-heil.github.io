@@ -45,7 +45,7 @@ These batch effects are strong enough that the healthy and disease states from t
 
 If I were to split the data by randomizing samples into each group, the model would have a good idea of what the data in the test set looked like based only on the training data.
 Then, when the model is applied to new studies it would take a huge performance hit because it wouldn't know anything about their data.
-This type of issue is called [data leakage](https://www.kaggle.com/dansbecker/data-leakage).
+This type of issue is called data leakage.
 
 ## Data Leakage
 Data leakage occurs when the training set gives the model information about the testing set that the model won't have when applied to new data.
@@ -61,16 +61,19 @@ This assumption is typically mentioned to explain that the test set [should look
 That is to say that the claim "based on the test set performance, this model should perform well" has the implied caveat "on data that looks a lot like the test set."
 As a result, even a properly held-out test set isn't necessarily a good indicator of a model's [external validity](https://www.reed.edu/economics/parker/s12/312/notes/Notes7.pdf) if the test set doesn't look like the domain it will be applied to.
 
-### Example:
-In gene expression data, individual studies have batch effects that make them look different from each other.
+For example, in gene expression data individual studies have batch effects that make them look different from each other.
 A test set only containing samples from a single study is likely confounded by batch effects in a way that keeps it from being representative of all gene expression.
 
 
-## Base Rate
+## Base Rate/Metrics
 In statistics, the base rate is the rate at which a class occurs in a population.
-Because 
+For problems like disease prediction, the classes of interest have very low base rates in the population.
+As a result, we can create a model with great accuracy by simply predicting that every case is healthy.
 
-## Correct metrics used
+Since "always predict healthy" probably isn't what you want in a medical decision making tool, accuracy often isn't the correct metric for evaluating models.
+Alternatives include [balanced accuracy](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.balanced_accuracy_score.html) which takes the average accuracy for all classes and [F1 score](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html), which is the harmonic mean of precision and recall.
+Also popular are [ROC curves and precision-recall curves](https://machinelearningmastery.com/roc-curves-and-precision-recall-curves-for-classification-in-python/).
+
 
 ## Comparison to known biology
 
