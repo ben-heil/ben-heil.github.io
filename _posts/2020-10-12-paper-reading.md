@@ -76,10 +76,18 @@ Also popular are [ROC curves and precision-recall curves](https://machinelearnin
 
 
 ## Comparison to known biology
+It can be difficult to determine what a machine learning model is learning and what "good performance" actually means.
+One way to lend credence to a model is to have it make predictions on well understood problems not present in the training/validation sets.
+For example, if a model is predicting variant pathogenicity, it should probably predict deleterious TP53 mutations as pathogenic.
+
 
 ## Comparison to baseline model
+Complex machine learning models [don't necessarily outperform logistic regression](https://www.sciencedirect.com/science/article/abs/pii/S0895435618310813).
+To justify the decrease in interpretability that comes with a more complex model, papers need to demonstrate that their model performs better than simple logistic regression/random forest models.
+
+
+## Author Degrees of Freedom 
+- Cite Arjun (or https://www.danielnettle.org.uk/2019/10/01/the-view-from-the-top-of-the-hierarchy-of-evidence/)?
 
 ## Reasonable model assumptions
 
-## Author Degrees of Freedom 
-- Cite Arjun
