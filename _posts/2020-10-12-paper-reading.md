@@ -54,8 +54,21 @@ When working with biological data, data leakage frequently occurs when performin
 There are a number of ways in which data leakage can happen. 
 For a more in depth description, Jacob Schreiber gives a great explanation and example in [this twitter thread](https://twitter.com/jmschreiber91/status/1291161574393221123).
 
+## IID Assumption
+Machine learning makes the (big) assumption that the data used is [independently and identically distributed](https://stats.stackexchange.com/questions/213464/on-the-importance-of-the-i-i-d-assumption-in-statistical-learning).
+This assumption is typically mentioned to explain that the test set [should look like the training set](https://www.cs.princeton.edu/courses/archive/spring16/cos495/slides/ML_basics_lecture1_linear_regression.pdf), it should also be the case that the test set has the same distribution as the real world data.
+
+That is to say that the claim "based on the test set performance, this model should perform well" has the implied caveat "on data that looks a lot like the test set."
+As a result, even a properly held-out test set isn't necessarily a good indicator of a model's [external validity](https://www.reed.edu/economics/parker/s12/312/notes/Notes7.pdf) if the test set doesn't look like the domain it will be applied to.
+
+### Example:
+In gene expression data, individual studies have batch effects that make them look different from each other.
+A test set only containing samples from a single study is likely confounded by batch effects in a way that keeps it from being representative of all gene expression.
+
 
 ## Base Rate
+In statistics, the base rate is the rate at which a class occurs in a population.
+Because 
 
 ## Correct metrics used
 
