@@ -1,22 +1,22 @@
 ---                                                                                                                                                                                                         
 layout: post                                                                                                                                                                                                
-title: How to read Bio ML Papers
-description: The things to look for in comp bio papers that use machine learning
+title: How to Read Bio ML Papers
+description: What to look for in computational biology papers that use machine learning
 cover-img: "/assets/img/river_trail.jpg"                                                                                                                                                                    
+citable: true
 ---
 
 # Intro
 Designing machine learning (ML) experiments to solve biological problems is difficult because it requires expertise from multiple fields.
-On one side, machine learning knowledge is required to understand the assumptions made by various model types.
+On one side, machine learning knowledge is required to understand the assumptions made in selecting and training a model.
 On the other, biological knowledge lets the experimenter know which assumptions are actually warranted by biology and which are inappropriate.
 
-A lot of cool science is done at the intersection of these two domains.
-That being said, I frequently read papers that would be amazing, but the expertise is skewed towards one field or the other.
+A lot of interesting science is done at the intersection of these two domains.
+That being said, I frequently read papers that would be amazing, but the authors' expertise is skewed towards one field or the other.
+This article is designed to help bridge the expertise gap by describing important details that may be overlooked.
 
-This article is designed to help people from both fields know what to look for in comp bio ML papers.
 
-
-## Data Splitting (held out test set)
+## Data Splitting
 In machine learning it is necessary to have some measure of how well your model performs.
 The standard way to do this is to [randomly split your data into three sets](https://stackoverflow.com/questions/38250710/how-to-split-data-into-3-sets-train-validation-and-test) known as the train, validation, and test set.
 The performance of your model on each dataset tells you something different about your model.
@@ -31,11 +31,11 @@ The important part is that the dataset isn't used to make any decisions in train
 If that condition holds, then the test set performance is an estimate for how well a model should perform on new data.
 
 
-## Data Splitting (Inter-study differences accounted for)
-The previous section was probably obvious to people coming from a machine learning background.
-Interestingly, determining the train/test/validation sets by randomly selecting samples from the dataset often fails in biology.
+## Failures of Data Splitting in Biology
+The previous section was likely familiar to people coming from a machine learning background.
+Interestingly, determining the train/test/validation sets by randomly selecting samples from the whole dataset often fails in biology.
 As stated previously, the separation between the validation/testing sets and the training data is what allows them to be useful estimators of performance.
-If you split data at the per-sample level, however, you'll end up leaking data between those sets.
+If you split data at the per-sample level in biology, however, you'll end up leaking data between those sets.
 
 For example, I work with [gene expression data](https://github.com/ben-heil/whistl/blob/master/notebook/data_exploration/compendium_eda.ipynb), where batch effects are very pronounced.
 These batch effects are strong enough that the healthy and disease states from the same study look more similar to each other than healthy gene expression across studies (see images below).
@@ -76,17 +76,18 @@ Alternatives include [balanced accuracy](https://scikit-learn.org/stable/modules
 Also popular are [ROC curves and precision-recall curves](https://machinelearningmastery.com/roc-curves-and-precision-recall-curves-for-classification-in-python/).
 
 
-## Comparison to known biology
+## Evaluation with Known Biology
 It can be difficult to determine what a machine learning model is learning and what "good performance" actually means.
 One way to lend credence to a model is to have it make predictions on well understood problems not present in the training/validation sets.
 For example, if a model is predicting variant pathogenicity, it should probably predict deleterious TP53 mutations as pathogenic.
 
 
-## Comparison to baseline model
+## Comparison to Other Models
+### Comparison to a baseline model
 Complex machine learning models [don't necessarily outperform logistic regression](https://www.sciencedirect.com/science/article/abs/pii/S0895435618310813).
 To justify the decrease in interpretability that comes with a more complex model, papers need to demonstrate that their model performs better than simple logistic regression/random forest models.
 
-## Comparison to prior work
+### Comparison to prior work
 If other models have been developed to do the same thing, it's important to show that the new model adds value to the problem.
 It doesn't necessarily need to be higher performing, but if it's not it should have some redeeming feature like interpretability or efficiency.
 
@@ -102,3 +103,10 @@ Deep learning models in particular have strong assumptions about the data they'r
 If a paper is using a convolutional neural network, it should be clear why proximity in feature space is important.
 Likewise, if a paper is using a recurrent neural network, it should be clear why the order of the sequence matters.
 
+# Conclusion
+Biological data is idiosyncratic, and using it in machine learning models without domain knowledge can lead to mistakes.
+This article lists things that I think about when reading biology papers using machine learning, but it's not exhaustive.
+If you feel like I'm missing something, you're welcome to DM me on twitter about it!
+
+### Acknowledgements 
+This post is funded in part by the Gordon and Betty Moore Foundation's Data-driven Discovery initiative through grant GBMF4552.
