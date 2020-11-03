@@ -42,5 +42,10 @@ An introduction on what dimensionality reduction methods are and why they are us
 A presentation about the motivation for using recurrent neural networks and related models, the ideas behind how these methods work, and some examples of their use in biology.
 
 ### Sign-up
-If you would like to receive a link to the workshop and the lecture materials, sign up [here](https://forms.gle/u9aMTvuG1vpGXsDLA)!
-If you're reading this post after October 29, there will be a links below.
+~~If you would like to receive a link to the workshop and the lecture materials, sign up [here](https://forms.gle/u9aMTvuG1vpGXsDLA)!~~
+~~If you're reading this post after October 29, there will be links below.~~
+
+The workshop is complete! 
+You can find a recording of the workshop [here](https://www.youtube.com/watch?v=LyZo6an8Qqo).
+
+The workshop materials, including the presentation slides and demo notebooks can be found [here](https://github.com/ben-heil/dl_workshop).
