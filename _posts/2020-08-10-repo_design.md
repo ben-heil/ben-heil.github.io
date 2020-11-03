@@ -1,20 +1,24 @@
 ---
 layout: post
-title: How the Repo Gets Made
-subtitle: A description of repo design
-description: "A story of designing a repository"
+title: How to Use Object Oriented Programming to Save Time 
+description: "The story of how I built a transcriptional machine learning benchmark starting from an empty repo"
 cover-img: "/assets/img/lakeview.jpg"
 citable: true
 ---
 
 # Introduction
 
-When I look at large projects' repositories, I find myself wondering how the authors decided how all the code fit together.
-Likewise, when I was starting my transcriptional [model benchmarking project](https://github.com/greenelab/saged)
-I was unable to find any articles on best practices for projects with lots of machine learning models and datasets.
-While I don't consider myself an expert software engineer, I put together this post to explain how I think about designing a software project.
+When I look at large projects' repositories, I find myself wondering how the authors decided how to fit all the code together.
+I'll read the projects' associated papers, but their methods sections explain what is happening in the project, not why it is designed the way it is.
 
-I will do my best to explain the iterations I went through that led me to my current project structure, the reasoning behind the structures, and the places I got ideas from.
+When I started my transcriptional [model benchmarking project](https://github.com/greenelab/saged), I was deliberate in searching for best practices in ML project design.
+Unfortunately, I was unable to find any articles that explained the best way to structure code in a project with multiple machine learning models and datasets.
+Over a few months of work and several missteps, I created my own way to structure such a project.
+
+This post describes my failed attempts and the solution I decided on.
+If you're interested in how [object oriented programming](https://docs.python.org/3/tutorial/classes.html) can be a useful tool,
+or are looking for a way to organize a machine learning project, this post is for you.
+
 
 ## Project Background
 To make sense of the design decisions, a little background information is necessary.
@@ -39,7 +43,7 @@ It then had [LabeledDataset](https://github.com/greenelab/saged/blob/a8a89d36873
 classes outlining the functions that labeled and unlabeled datasets would need that the other wouldn't.
 Finally, I put the actual logic into [RefineBioUnlabeledDataset](https://github.com/greenelab/saged/blob/a8a89d36873c79fa1cdd6ad8ee893d18f3633747/saged/datasets.py#L249)
 and [RefineBioLabeledDataset](https://github.com/greenelab/saged/blob/a8a89d36873c79fa1cdd6ad8ee893d18f3633747/saged/datasets.py#L674), each of which inherited from their corresponding base classes.
-To clarify the name, the expresion compendium I'm working with comes from [refine.bio](refine.bio).
+To clarify the name, the expression compendium I'm working with comes from [refine.bio](refine.bio).
 
 ## Why So Many Base Classes?
 If you're unfamiliar with object oriented programming, all the machinery may seem like overkill to you.
@@ -89,3 +93,20 @@ I wish I had done it sooner, or even started development by creating a script fu
 The config file system finally gave my project the modularity I was looking for.
 The models and datasets were swappable without much effort, and they could be selected by individual command line arguments.
 All that was left was to find a way [to run everything with one button press](https://ben-heil.github.io/2020-06-30-shoulddo/#button).
+
+To automate running and paralellizing the code I decided to learn [Snakemake](https://snakemake.readthedocs.io/en/stable/).
+I picked Snakemake over other workflow management systems simply because I know other people who use it who I could ask for guidance if I got stuck.
+After a day of reading I managed to write an [initial Snakefile](https://github.com/greenelab/saged/blob/20180b37b43dbbf112ed7b874a2149a4cf0dba9a/Snakefile) that automatically ran all the benchmark scripts.
+
+## More Features
+The project is still [under development](https://github.com/greenelab/saged/commits/master), and I'm continuing to implement new features. 
+Thankfully, with the hard design problems out of the way adding new classes and benchmark scripts is very easy.
+For example, to implement a [pseudolabeling](http://deeplearning.net/wp-content/uploads/2013/03/pseudo_label_final.pdf) model I only had to write [two new functions](https://github.com/ben-heil/saged/blob/5d11a4d7c5fba2431c3e4ef07ae5549d0577f79f/saged/models.py#L867).
+The rest of the moving parts were already taken care of in the PytorchSupervised class.
+
+## Conclusion
+The challenges you will have in building a repository won't be the same as mine.
+I chose to optimize for a modular, easily automatable project, but those may not be your priorities.
+That being said, the factors you need to consider will be the same even if their execution is different.
+Thinking about your data, your model(s), your analysis, and how they all fit together is the crux of planning a machine learning project.
+Hopefully having read the decisions I made will help you to make good decisions of your own on future projects.
