@@ -46,8 +46,7 @@ The `on` keyword tells the workflow when to run.
 There are [a ton](https://docs.github.com/en/developers/webhooks-and-events/webhook-events-and-payloads) of different fields you can provide here,
 but the most common two are `push` and `pull_request`.
 You can also customize which branch the workflow is run on based on the event that triggered it.
-For more information on that, there is a [helpful page](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#on) in the Actions reference.
-
+For more information on that, there is a [helpful page](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#on) in the Actions reference.  
 
 ```
 name: Python Package Using Anaconda
@@ -320,7 +319,7 @@ jobs:
             os: ["ubuntu-latest", "windows-latest"]
     steps:
       - uses: actions/checkout@v2
-      - uses: goanpeca/setup-miniconda@v1
+      - uses: conda-incubator/setup-miniconda@v2
         with:
           activate-environment: test
           environment-file: environment.yml
