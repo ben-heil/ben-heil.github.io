@@ -27,9 +27,32 @@ To make them easier to correct, [I wrote a tool](#torchseal) that watches for me
 
 <a id='examples'></a>
 ## Memory Leak Examples
-### Accumulating loss
 
-### Creating a list of tensors (instead of floats)
+### Accumulating loss
+This first memory leak example was the first python memory leak I ever had, and is the first entry in [Pytorch's FAQ page](https://pytorch.org/docs/stable/notes/faq.html).
+
+``` python
+total_loss = 0
+
+for batch in data_loader:
+    images, labels = batch
+    
+    optimizer.zero_grad()
+    output = model(images)
+    loss = loss_fn(output, labels)
+    loss.backward()
+    optimizer.step()
+
+    total_loss += loss
+```
+
+The reason that this code leaks memory is that the `total_loss` variable has to keep track of the values of all past instances of `loss` in order to determine what the gradient of `total_loss` would be.
+You would expect `total_loss` to be a small object, but the autograd machinery of Pytorch ends up tying a lot of Tensors to it.
+Fotunately, this issue can be easily fixed by simply changing the last line to `total_loss += loss.item()` or `total_loss += float(loss)`.
+
+### Creating a list of tensors
+This first 
+``` python
 
 ### Creating neural nets in a subclass
 
