@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to Design and Structure an ML Project
+title: How to Structure an ML Project
 description: "One way to build a transcriptional machine learning benchmark"
 cover-img: "/assets/img/lakeview.jpg"
 citable: true
