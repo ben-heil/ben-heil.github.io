@@ -8,7 +8,7 @@ citable: true
 
 # Introduction
 
-When I look at large projects' repositories, I find myself wondering how the authors decided how to fit all the code together.
+When I look at large projects' repositories, I find myself wondering how the authors decided on the way their code would fit together.
 I'll read the projects' associated papers, but their methods sections explain what is happening in the project, not why it is designed the way it is.
 
 When I started my transcriptional [model benchmarking project](https://github.com/greenelab/saged), I was deliberate in searching for best practices in ML project design.
@@ -24,11 +24,11 @@ or are looking for a way to organize a machine learning project, you might want 
 To make sense of the design decisions, a little background information is necessary.
 [My current project](https://github.com/greenelab/saged) is to benchmark a number of classical ML and deep learning models to
 determine whether semi-supervised learning and dimensionality reduction are helpful for improving model performance on gene expression data.
-Because I've worked on ML projects before, I knew that the three main pieces I'd need to worry about were datasets, models, and analysis logic.
-I'll continually add more models and datasets as the project continues, so many of the design decisions I've made ensure that the benchmark is as modular as possible. 
+Because I've worked on ML projects before, I knew going in that the three main pieces I'd need to worry about are datasets, models, and analysis logic.
+Since I'll be continually addding more models and datasets as the project continues, many of the design decisions I've made ensure that the benchmark is as modular as possible. 
 
 ### Initial Plan
-In the beginning I planned for the project to have three main files containing benchmarking logic, model implementation, and datasets objects.
+In the beginning I planned for the project to have three main files containing benchmarking logic, model implementation, and dataset objects.
 I had already had a planning meeting with other project stakeholders, so I had a good idea of [what functionality would be required](https://github.com/greenelab/saged/issues/3#issue-646243304).
 
 ### Defining Datasets
@@ -40,18 +40,18 @@ My initial design for the datasets had a [base class](https://docs.python.org/3/
 which defined functions that all dataset classes were expected to have.
 It then had [LabeledDataset](https://github.com/greenelab/saged/blob/a8a89d36873c79fa1cdd6ad8ee893d18f3633747/saged/datasets.py#L178) and [UnlabeledDataset](https://github.com/greenelab/saged/blob/a8a89d36873c79fa1cdd6ad8ee893d18f3633747/saged/datasets.py#L220)
 classes outlining the functions specific to labeled and unlabeled data.
-Finally, I put the logic specific to the [refine.bio expression compendium](refine.bio) into [RefineBioUnlabeledDataset](https://github.com/greenelab/saged/blob/a8a89d36873c79fa1cdd6ad8ee893d18f3633747/saged/datasets.py#L249)
+Finally, I put the logic specific to the [refine.bio expression compendium](https://www.refine.bio/compendia?c=normalized) into [RefineBioUnlabeledDataset](https://github.com/greenelab/saged/blob/a8a89d36873c79fa1cdd6ad8ee893d18f3633747/saged/datasets.py#L249)
 and [RefineBioLabeledDataset](https://github.com/greenelab/saged/blob/a8a89d36873c79fa1cdd6ad8ee893d18f3633747/saged/datasets.py#L674), each of which inherited from their corresponding base classes.
 
 ### Aside: Why So Many Base Classes?
 If you're unfamiliar with object oriented programming, all the machinery may seem like overkill to you.
-And to be fair, there are around 250 lines of code and comments in the [datasets file](https://github.com/greenelab/saged/blob/a8a89d36873c79fa1cdd6ad8ee893d18f3633747/saged/datasets.py) that
-only describe what other classes will do.
+And to be fair, there are around 250 lines of code and comments in the [datasets file](https://github.com/greenelab/saged/blob/a8a89d36873c79fa1cdd6ad8ee893d18f3633747/saged/datasets.py) 
+just describing what other classes will do.
 There are two advantages of putting in the effort for all these base classes though.
 
-First, I expect to add datasets other than the [refine.bio](refine.bio) compendium in the future.
+First, I expect to add datasets other than the [refine.bio](https://www.refine.bio/) compendium in the future.
 By designing base classes with typed function signatures, I know exactly what the future dataset classes will need to do.
-Python will even throw an error telling me which functions I didn't implement I forget something.
+Python will even throw an error telling me which functions I didn't implement if I forget something.
 
 Second, having a set [API](https://francescolelli.info/programming/how-to-design-a-good-api-advanced-object-oriented-programming/) makes testing easier.
 Since I know exactly what functions each class will implement and what their inputs and outputs should be, I can use the same test cases for multiple datasets.
@@ -76,8 +76,8 @@ Since I didn't know exactly how they were going to be used, it was hard to deter
 
 I decided to change tacks and start working on the analysis logic for the benchmarks.
 In doing so I realized that the way I was handling model creation wouldn't work. 
-Since I wanted the models to be initialized with the same calling code, the difference in parameters between models would make the calling code to complex.
-If I didn't want to rewrite all the benchmarks each time I added a model, I'd need a different system.
+Since I wanted the models to be initialized with the same calling code, the difference in parameters between models would make the calling code too complex.
+If I didn't want to rewrite all the benchmarks each time I added a model I'd need a different system.
 
 I remembered looking at a project that used [allennlp config files](https://docs.allennlp.org/v1.0.0rc3/tutorials/getting_started/walk_through_allennlp/configuration/), and decided to copy that style.
 Instead of trying to force each model to have the same parameters passed in, I moved each model's parameters to [yml config files](https://github.com/ben-heil/saged/tree/0030174a8166758aa0696d0606579e84e495e2e8/model_configs).
@@ -96,7 +96,7 @@ The models and datasets were swappable without much effort, and they could be se
 All that was left was to find a way [to run everything with one button press](https://ben-heil.github.io/2020-06-30-shoulddo/#button).
 
 To automate running and paralellizing the code I decided to learn [Snakemake](https://snakemake.readthedocs.io/en/stable/).
-I picked Snakemake over other workflow management systems simply because I knew other people who use it who I could ask for guidance if I got stuck.
+I picked Snakemake over other workflow management systems simply because I knew other people using it who I could ask for guidance.
 After a day of reading I managed to write an [initial Snakefile](https://github.com/greenelab/saged/blob/20180b37b43dbbf112ed7b874a2149a4cf0dba9a/Snakefile) that automatically ran all the benchmark scripts.
 
 ### More Features
