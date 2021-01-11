@@ -1,7 +1,7 @@
 ---
 layout: post
 title: How to Design and Structure an ML Project
-description: "The story of how I built a transcriptional machine learning benchmark starting from an empty repo"
+description: "One way to build a transcriptional machine learning benchmark"
 cover-img: "/assets/img/lakeview.jpg"
 citable: true
 ---
