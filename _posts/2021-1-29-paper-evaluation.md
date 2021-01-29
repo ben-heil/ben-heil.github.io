@@ -1,6 +1,6 @@
 ---                                                                                                                                                                                                         
 layout: post                                                                                                                                                                                                
-title: How to Evaluate Bio ML Papers
+title: Evaluating Bio ML Papers
 description: What to look for in computational biology papers that use machine learning
 cover-img: "/assets/img/traintracks.jpg"                                                                                                                                                                    
 citable: true
