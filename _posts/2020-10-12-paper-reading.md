@@ -1,6 +1,6 @@
 ---                                                                                                                                                                                                         
 layout: post                                                                                                                                                                                                
-title: How to Read Bio ML Papers
+title: How to Evaluate Bio ML Papers
 description: What to look for in computational biology papers that use machine learning
 cover-img: "/assets/img/traintracks.jpg"                                                                                                                                                                    
 citable: true
@@ -9,7 +9,7 @@ citable: true
 # Intro
 Designing machine learning (ML) experiments to solve biological problems is difficult because it requires expertise from multiple fields.
 On one side, machine learning knowledge is required to understand the assumptions made in selecting and training a model.
-On the other, biological knowledge lets the experimenter know which assumptions are actually warranted by biology and which are inappropriate.
+On the other, domain knowledge lets the experimenter know which assumptions are actually warranted by biology and which are inappropriate.
 
 A lot of interesting science is done at the intersection of these two domains.
 That being said, I frequently read papers that would be amazing, but the authors make mistakes because their expertise is skewed towards one field or the other.
@@ -21,12 +21,12 @@ Equipped with this knowledge you can read these papers more carefully and notice
 ## Data Splitting
 In machine learning the standard way to evaluate model performance is to [randomly split your data](https://stackoverflow.com/questions/38250710/how-to-split-data-into-3-sets-train-validation-and-test) into three sets known as the train, validation, and test set.
 A model's performance on each dataset tells you something different about it.
-The training set is the set of data the model is actually fit to, and the training set performance tells you how far training has progressed.
+The training set is the data the model is actually fit to, and the training set performance tells you how far training has progressed.
 
-The validation set is a set of data not used in training the model.
+The validation set is the data not used in training the model.
 When training multiple models, or a single model with different hyperparameters, the models' performance on the validation set tells you which model to actually use.
 
-Finally, the test set is a set of data held out from the training process.
+Finally, the test set is the data held out from the training process.
 This data can either be pulled randomly from the original dataset, or it can be an external dataset.
 The important part is that the dataset isn't used to make any decisions in training or model selection.
 If that condition holds, then the test set performance is an estimate of how well a model should perform on new data.
@@ -74,7 +74,7 @@ As a result, we can create a model with great accuracy by simply predicting that
 
 Since "always predict healthy" probably isn't what you want in a medical decision making tool, accuracy often isn't the correct metric for evaluating models.
 Alternatives include [balanced accuracy](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.balanced_accuracy_score.html) which takes the average accuracy for all classes and [F1 score](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html), which is the harmonic mean of precision and recall.
-Also popular are [ROC curves and precision-recall curves](https://machinelearningmastery.com/roc-curves-and-precision-recall-curves-for-classification-in-python/).
+Also popular are [ROC curves and precision-recall curves](https://machinelearningmastery.com/roc-curves-and-precision-recall-curves-for-classification-in-python/), which respectively visualize sensitivity/specificity and precision/recall tradeoffs.
 
 ## Evaluation with Known Biology
 It can be difficult to determine what a machine learning model is learning and what "good performance" actually means.
@@ -85,11 +85,11 @@ For example, if a model is predicting genetic variant pathogenicity, it should p
 ## Comparison to Other Models
 ### Comparison to a baseline model
 Complex machine learning models [don't necessarily outperform logistic regression](https://www.sciencedirect.com/science/article/abs/pii/S0895435618310813).
-To justify the decrease in interpretability that comes with a more complex model, papers need to demonstrate that their model performs better than simple logistic regression or random forest models.
+To justify the decrease in interpretability that comes with a more complex model, papers need to demonstrate that their model performs better than simpler models like logistic regression or random forest.
 
 ### Comparison to prior work
 If other models have been developed to do the same thing, it's important to show that a new model adds value to the problem.
-A new model doesn't necessarily need to be higher performing, but if it's not it should have some redeeming feature like interpretability, efficiency, or novelty.
+A new model doesn't necessarily need to be higher performing, but if not it should have some redeeming feature like interpretability, efficiency, or novelty.
 
 
 ## Author Degrees of Freedom
@@ -105,7 +105,7 @@ Likewise, if a paper is using a recurrent neural network, it should be clear why
 # Conclusion
 Biological data is idiosyncratic, and using it in machine learning models without domain knowledge can lead to mistakes.
 This article lists things that I think about when reading biology papers using machine learning, but it's not exhaustive.
-If you feel like I'm missing something, you're welcome to DM me on twitter about it!
+If you feel like I'm missing something, you're welcome to DM me on Twitter about it!
 
 ### Acknowledgements 
 This post is funded in part by the Gordon and Betty Moore Foundation's Data-driven Discovery initiative through grant GBMF4552.
