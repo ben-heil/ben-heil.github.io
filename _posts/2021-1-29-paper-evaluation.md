@@ -74,7 +74,8 @@ As a result, we can create a model with great accuracy by simply predicting that
 
 Since "always predict healthy" probably isn't what you want in a medical decision making tool, accuracy often isn't the correct metric for evaluating models.
 Alternatives include [balanced accuracy](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.balanced_accuracy_score.html) which takes the average accuracy for all classes and [F1 score](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html), which is the harmonic mean of precision and recall.
-Also popular are [ROC curves and precision-recall curves](https://machinelearningmastery.com/roc-curves-and-precision-recall-curves-for-classification-in-python/), which respectively visualize sensitivity/specificity and precision/recall tradeoffs.
+Also popular are [precision-recall curves](https://machinelearningmastery.com/roc-curves-and-precision-recall-curves-for-classification-in-python/), which visualize precision/recall tradeoffs.
+In the case of imbalanced classes, ROC curves should be avoided as they are [overly optimistic](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0118432).
 
 ## Evaluation with Known Biology
 It can be difficult to determine what a machine learning model is learning and what "good performance" actually means.
@@ -109,3 +110,4 @@ If you feel like I'm missing something, you're welcome to DM me on Twitter about
 
 ### Acknowledgements 
 This post is funded in part by the Gordon and Betty Moore Foundation's Data-driven Discovery initiative through grant GBMF4552.
+Thanks to [Michael Hoffman](https://twitter.com/michaelhoffman) for [pointing out](https://twitter.com/michaelhoffman/status/1356996687106101249) issues with using ROC curves on imbalanced datasets.
