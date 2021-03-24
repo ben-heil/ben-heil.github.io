@@ -4,6 +4,9 @@ title: How I Got Banned from Twitter and How You Can Help
 description: "The story of how I got my personal account banned for using the Twitter tweet downloading API to download tweets"
 cover-img: "/assets/img/far_philly.jpg"
 ---
+**Update: my account got [unbanned on New Year's Eve](https://twitter.com/autobencoder/status/1344747555054350341).                                                                                         
+I am happy to be back and appreciate everyone who Tweeted for me!** 
+
 This past August I ([@autobencoder](https://twitter.com/autobencoder)) applied for and received a developer API key to download data from my Twitter timeline.
 My goal was to train a sentiment analysis classifier, then run it on an aggregation of tweets in my timeline to see if/how the sentiment of tweets in general changed over time.
 I downloaded some data, but ultimately ended up shelving the project in early August when I learned the API doesn't allow for tweets over one week old to be downloaded.
