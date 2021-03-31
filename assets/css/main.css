@@ -108,6 +108,13 @@ img {
   max-width: 100%;
 }
 
+.responsive_img {
+	img {
+	width: 100%;
+	height: auto;
+	}
+}
+
 .disqus-comments {
   margin-top: 1.875rem;
 }
