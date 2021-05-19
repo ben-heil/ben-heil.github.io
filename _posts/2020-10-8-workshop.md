@@ -3,6 +3,7 @@ layout: post
 title: An Invitation to the Deep Learning for Biologists Workshop
 description: Information for an upcoming workshop
 cover-img: "/assets/img/river_trail.jpg"
+tags: ['machine learning', 'comp bio']
 ---
 
 ### Overview
