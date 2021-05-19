@@ -26,7 +26,13 @@ title: 'Tag Index'
         {%- for post in site.tags[tag] -%}
             <div class="tag-entry">
                 <a href="{{ post.url | relative_url }}">{{- post.title -}}</a>
+                {% if post.subtitle %}
+					<div class="post-entry">
+						{{ post.subtitle }} 
+					</div>
+				{% endif %}
                 <div class="entry-date">
+					
                     <time datetime="{{- post.date | date_to_xmlschema -}}">{{- post.date | date: date_format -}}</time>
                 </div>
             </div>
