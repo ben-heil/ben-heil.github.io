@@ -3,7 +3,7 @@ layout: post
 title: How to Use Conda With Github Actions
 description: "A guide for integrating the Conda package manager with the Github Actions continuous integration service"
 cover-img: "/assets/img/far_philly.jpg"
-tags: ['conda', 'CI']
+tags: ['conda', 'continuous integration']
 ---
 
 # Overview
