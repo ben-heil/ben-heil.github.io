@@ -41,8 +41,8 @@ If you split data at the per-sample level in biology, however, you'll end up lea
 For example, I work with [gene expression data](https://github.com/ben-heil/whistl/blob/master/notebook/data_exploration/compendium_eda.ipynb), where batch effects are very pronounced.
 These batch effects are strong enough that the healthy and disease states from the same study look more similar to each other than healthy gene expression across studies (see images below).
 
-<img src="/assets/img/post_img/inter_study_distance.png"/>
-<img src="/assets/img/post_img/interdisease_distance.png"/>
+{% picture /assets/img/post_img/inter_study_distance.png %}
+{% picture /assets/img/post_img/interdisease_distance.png %}
 
 Imagine if I were to split the data by randomly assigning samples into train, validation, and test sets without regard for which study they came from.
 Any model I trained would have a good idea of what the data in the test set looked like based only on the training data.
