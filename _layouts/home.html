@@ -4,9 +4,14 @@ layout: page
 
 {{ content }}
 
+
 {% assign posts = paginator.posts | default: site.posts %}
 
 <div class="posts-list">
+	<div class="recent-post-header">
+	<h1> Recent Blog Posts: </h1>
+	<hr>
+	</div>
   {% for post in posts %}
   <article class="post-preview">
     <a href="{{ post.url | relative_url }}">
