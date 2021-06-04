@@ -6,7 +6,7 @@ cover-img: "/assets/img/fall_trees.jpg"
 ---
 
 # Background
-I'm a PhD student at the University of Pennsylvania within the Genomics and Compuatational Biology graduate group.
+I'm a PhD candidate at the University of Pennsylvania within the Genomics and Compuatational Biology graduate group.
 I got my undergrad degree in bioinformatics from Baylor University while drinking Dr. Pepper floats and watching the bears.
 
 # Research
