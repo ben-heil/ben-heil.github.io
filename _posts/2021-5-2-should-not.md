@@ -7,29 +7,43 @@ tags: ['grad school', 'academia']
 ---
 
 # Intro
-Any decision that costs [six years of your life](https://gradschool.duke.edu/about/statistics/all-departments-phd-time-degree-statistics) should be considered carefully, so you should weight the pros and cons before deciding to do a PhD.
-I think doing a PhD has been a good decision for me (as you might have inferred from the line on my about page that says "PhD candidate") but it's not a good decision for everyone.
+Any decision that costs [six years of your life](https://gradschool.duke.edu/about/statistics/all-departments-phd-time-degree-statistics) should be considered carefully, so you should weigh the pros and cons before deciding to do a PhD.
+I think doing a PhD has been a good decision for me (as you might have inferred from the line on my "about" page that says "PhD candidate"), but it's not necessarily a good decision for everyone.
 To help aspiring grad students decide whether a PhD is right for them, I'm writing two posts giving my best arguments for and against doing a PhD.
-This post explains the reasons why you shouldn't do a PhD, and the next post will discuss why you should.
+This post will take the position that you should not do a PhD.
 As always, questions, comments, concerns, angry retorts, and any relevant sea shanties should be [sent to me via Twitter](https://twitter.com/autobencoder).
+
+This post is not comprehensive.
+There are certainly valid reasons to not apply to grad schools that vary person to person.
+For example, uprooting your life and moving to a new city may not be feasible for you.
+I selected the topics I did because they are fairly universal.
+Most people will make less money while doing a PhD, [many find grad school emotionally difficult](https://www.nature.com/articles/d41586-020-02439-6), and all PhD students will have to interact with the academic system.
+
+It's also worth mentioning my background as it informs my perspective.
+My undergrad degree is in bioinformatics from [a program](https://www.ecs.baylor.edu/index.php?id=961235) based in the computer science department. 
+The alternatives to a PhD that I researched were primarily software engineer positions, so I may be more optimistic about what other choices look like than someone with a pure biology background.
+I'm also from the United States, so I had the privilege of being a domestic applicant to most of the schools I applied to.
+If you're an international applicant, every step of the process becomes more challenging.
+
+With the preliminaries out of the way, here are three reasons you shouldn't apply to graduate school:
 
 ---
 
 ## Money
-Financially, the expected value of the amount of money you will make over your lifetime will be less if you do a PhD.
+Financially, you [shouldn't expect to make more money](https://www.sciencemag.org/careers/2008/04/phdollars-does-grad-school-make-financial-sense) in the long run by doing a PhD, and in the short run you'll make less.
 If you have a CS background, you can go into industry as a software engineer or data scientist and make more money than you will as a PhD student.
 If your skills are more biological, you could work at a pharma company instead.
 
 That's abstract though, let's talk about numbers.
-As a conservative estimate, I looked up Pfizer [associate scientist](https://www.glassdoor.com/Salary/Pfizer-Associate-Scientist-Salaries-E525_D_KO7,26.htm) (an entry level bio position) and
+As a conservative estimate, I looked up Pfizer [associate scientist](https://www.glassdoor.com/Salary/Pfizer-Associate-Scientist-Salaries-E525_D_KO7,26.htm) (an entry-level bio position) and
 [software engineer](https://www.glassdoor.com/Salary/Pfizer-Software-Engineer-Salaries-E525_DAO.htm?filter.jobTitleExact=Software+Engineer%28%29) salaries on Glassdoor.
-The mean salaries for the positions were $60k and $100k per year respectively[^SE].
+The mean salaries for the positions were $60k and $100k per year, respectively[^SE].
 On the other hand, a lucky grad student will make somewhere around [$34k per year](https://www.nsf.gov/pubs/2020/nsf20587/nsf20587.htm).
-Over the course of your six year PhD, even if you remain at your industry job's starting salary, the difference is between $150,000 and $400,000.
+Over the course of six year PhD, even if you had remained at your industry job's starting salary, the difference is still between $150,000 and $400,000.
 
-Imagine someone offering you a six digit check, to be paid in six years, and all you have to do is not go to grad school.
+Imagine someone offering you a large check, to be paid in six years, and all you have to do is not go to grad school.
 Sure money doesn't buy happiness, but it certainly can prevent unhappiness.
-Having a ~$200k decrease in student loans/increase in your net worth is a big change, especially if you're just coming out of college.
+A six figure decrease in student loans/increase in your net worth is a big change, especially if you're just coming out of college.
 
 ---
 
@@ -44,7 +58,7 @@ You begin to have strong feelings on whether the manifold hypothesis applies to 
 Eventually you end up in unmarked territory, seeing things daily that no one has ever seen.
 Like a rocket getting further from earth, the communication gap grows and grows.
 You find that to explain what you're _actually_ researching to someone, they'd have to already know what a variational autoencoder is and the difference in expression distributions between microarray and RNA-seq data.
-Instead you come up with simplifications like "I teach computers to see whether people are sick" and nod sagely at the inevitable reply, "Ooh, that sounds hard."
+Instead you come up with simplifications to tell your family like "I teach computers to see whether people are sick" and nod sagely at the inevitable reply, "Ooh, that sounds hard."
 
 #### Ill-defined Progress
 The purpose of academic research is to test hypotheses in order to learn more about how the world works.
@@ -57,7 +71,7 @@ In high school I never understood how someone could do something as boring and p
 In grad school, I found the "work harder -> run farther" feedback loop was a welcome reprieve from the "work harder -> ???" feedback loop as a PhD student.
 
 #### Challenging Work-Life Balance
-Grad student are paid a salary, not a wage.
+Grad students are paid a salary, not a wage.
 That is to say that if you work an eighty hour week, you will make no more money than if you went on vacation.
 However, the win condition for a PhD is to produce enough research in your field that you are acknowledged as an expert by your professor and thesis committee.
 As a result, you end up calculating whether the breaks you take are getting you well-needed rest or just delaying your graduation that much longer.
@@ -69,11 +83,23 @@ Academia isn't a bad place (says the person with a vested interest in graduate d
 However, there are bad reasons to go into academia.
 This section shouldn't be read as "academia is the worst, go elsewhere", but instead "here are some realities of the academic world, be warned."
 
+#### Academia is Sales
+A common reason to become an academic is to have the freedom to choose what to research, but often your freedom to research what you want is a function of your ability to do sales.
+
+As a grad student, what you research is heavily dependent on your lab's focus.
+If you want to do something else, you have to convince your boss that it's a good idea[^PI].
+If that fails, you'll have to convince a panel of scientists to fund your ideas via a [fellowship](https://www.nsfgrfp.org/) instead.
+If you're fortunate enough to become a professor, you will ostensibly have control over your lab's research direction.
+You will, of course, have to convince a [granting agency](https://www.ascb.org/careers/where-to-find-research-funding-opportunities/) to fund that research direction though.
+
+As an academic, you'll have an unparalleled ability to choose what you work on.
+However, that freedom and the future of your career are circumscribed by your ability to convince others that what you're doing is important.
+
 #### Not Just More Undergrad
 There is a sort of person[^nerd] who enjoys the structure of undergraduate life.
 Learning new things within a defined scope, being evaluated on your knowledge in predictable intervals, and having well-defined time constraints is something they enjoy.
 To such a person the idea of leaving their undergrad program to live an entirely different lifestyle in the workforce can be terrifying.
-They might conclude, incorrectly, that the only way to avoid change is pursue even more education.
+They might conclude, incorrectly, that the only way to avoid change is to pursue even more education.
 
 While the trappings of PhD and undergraduate programs are similar, the actual experiences are very different.
 You do take classes for the first year or two, but the classes themselves aren't like the ones in undergrad. 
@@ -86,7 +112,7 @@ In grad school (as in life) you rarely know when the events with disproportionat
 You will look daily at experimental results, and the difference between [discovering penicillin](https://en.wikipedia.org/wiki/Alexander_Fleming#Discovery_of_penicillin) and throwing out a contaminated plate will be dependent on your skills and your luck rather than your preparation for that event.
 
 The social life in grad school is different as well.
-Obviously social life looks like is very program/person dependent, but in general your peers will be from a wider age range and will have more concerns than just what is happening at school.
+What social life looks like is very program/person dependent, but in general your peers will be from a wider age range and will have more concerns than just what is happening at school.
 
 #### The Academic Job Market
 Even if the classic CS/bio jobs aren't something you want to do, you should be aware that the academic job market is hypercompetitive.
@@ -94,23 +120,12 @@ If your goal is to become a tenured professor, you will have to repeatedly move 
 An average timeline is around six years of doing a PhD, [4.5 years of being a postdoc](https://nexus.od.nih.gov/all/2012/06/29/postdoctoral-researchers-facts-trends-and-gaps/), and six years to get tenure.
 That is to say that even if everything goes well, you're still not getting a tenured position until you're 40+ years old.
 
-#### Academia is Sales
-The primary reason to become an academic is to have freedom to choose what to research, but often your freedom to research what you want is a function of your ability to do sales.
-
-As a grad student, what you research is heavily dependent on your lab's focus.
-If you want to do something else, you have to convince your boss that it's a good idea[^PI].
-If that fails, you'll have to convince a panel of scientists to fund your ideas via a [fellowship](https://www.nsfgrfp.org/) instead.
-If you're fortunate enough to become a professor, you will ostensibly have control over your lab's research direction.
-You will, of course, have to convince a [granting agency](https://www.ascb.org/careers/where-to-find-research-funding-opportunities/) to fund that research direction though.
-
-As an academic, you'll have an unparalelled ability to choose what you work on.
-However, that freedom and the future of your career are are circumscribed by your ability to convince others that what you're doing is important.
 
 ---
 
 ## Conclusion
 PhD life isn't all bad.
-In fact I have an entire post about the good parts going up next week.
+In fact, I have an entire post about the good parts going up next week.
 If I have failed to dissuade you from doing a PhD, maybe you should [read it](#TODO).
 
 *Note, the link won't work until the post is published, so if you're reading this before 6/16/21 it won't go anywhere*
@@ -124,11 +139,16 @@ If I have failed to dissuade you from doing a PhD, maybe you should [read it](#T
 
 - [This](https://nexus.od.nih.gov/all/2012/06/29/postdoctoral-researchers-facts-trends-and-gaps/) analysis about postdoc positions
 
+- ["...although few PhD holders end up unemployed, it is not clear that spending years securing this high-level qualification is worth it for a job as, for example, a high-school teacher."](https://www.nature.com/articles/472276a).
+
 - shouldigetaphd.com - I haven't actually read the book, but having listened to to the author talk about PhD programs before on podcasts I'm fairly confident the answer will be "No."
+
+### Acknowledgements 
+Thanks to [Rachel Ungar](https://twitter.com/raungar) for reading through an early version.
 
 ### Footnotes
 
-[^SE]: I was unable to determine whether software engineer is an entry level title at Pfizer. It's possible that $100k is an overly generous estimate for a CS grad at Pfizer. However, if you're willing to move across country for a PhD you could move to one of the [many places offering more than 100k salary for entry level software engineers](https://www.levels.fyi/). I picked the Pfizer position because it's a low estimate for the type of salary you can make with a CS degree, and because its compensation structure should be similar to the Pfizer associate scientist position.
+[^SE]: I was unable to determine whether software engineer is an entry-level title at Pfizer. $100k may be an overly generous estimate for a CS grad at Pfizer. However, if you're willing to move across country for a PhD you could move to one of the [many places offering more than 100k salary for entry-level software engineers](https://www.levels.fyi/). I picked the Pfizer position because it's a low estimate for the type of salary you can make with a CS degree, and because its compensation structure should be similar to the Pfizer associate scientist position.
 [^negative]: They probably should be, but publishing negative results is a blog post in its own right.
 [^nerd]: I fall into this group of people, who I would refer to as nerds. However, nerd is a category vague enough to be meaningless so I avoided using it here.
 [^PI]: To be fair, this is very dependent on your lab and field. Some labs have broad research directions, plenty of funding, and a good degree of leeway on what you can do day-to-day. In other labs your lab head will be more hands-on about which experiments you do and what your research topic is.
