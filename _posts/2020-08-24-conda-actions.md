@@ -36,7 +36,7 @@ name: Python Package Using Anaconda
 ```
 At the top level, the `name` command sets the name of your whole workflow.
 In the Actions tab on Github, it looks like this:
-{% picture /assets/img/post_img/github_workflow_name.png %}
+{% include responsive-image.html image="/assets/img/post_img/github_workflow_name.png" %}
 
 ```
 name: Python Package Using Anaconda
@@ -62,7 +62,7 @@ The only job we're running in this example has the id `build-linux`.
 It's worth noting that the id describes what the job does instead of changing anything about the workflow.
 
 The image below shows the locations where the job id shows up in the Actions tab on Github.
-{% picture /assets/img/post_img/github_workflow_job.png %}
+{% include responsive-image.html image="/assets/img/post_img/github_workflow_job.png" %}
 
 ```
 name: Python Package Using Anaconda
@@ -119,7 +119,7 @@ It also introduces a new keyword, `with`, which is used to pass key-value pairs 
 This istance of `with` tells `setup-python` to set up Python 3.8 specifically.
 
 The names of the two steps so far can be seen below, along with a default step that sets up the runner.
-{% picture /assets/img/post_img/github_workflow_steps.png %}
+{% include responsive-image.html image="/assets/img/post_img/github_workflow_steps.png" %}
 
 ```
 name: Python Package Using Anaconda
@@ -199,7 +199,7 @@ jobs:
 Finally, the last step installs and executes pytest to run any test cases in the repository.
 There's nothing new in this step, so the section will conclude with the full image of the action's run.
 
-{% picture /assets/img/post_img/github_workflow_full.png %}
+{% include responsive-image.html image="/assets/img/post_img/github_workflow_full.png" %}
 
 <a id="examples"></a>
 ## Examples of Conda Actions

@@ -49,7 +49,8 @@ Here are some fun glitches and catch-22s that arise when suspended:
 - Twitter wants you to feel welcome, despite your suspension.
 So much so that they either add a welcome back card to your timeline or ask for your friend's contact information every day.
 
-{% picture /assets/img/post_img/welcome.jpg width="25%" %} {% picture /assets/img/post_img/friends.jpg width="25%" %}
+<img src="/assets/img/post_img/welcome.jpg" width="25%">
+<img src="/assets/img/post_img/friends.jpg" width="25%">
 
 - This one is less fun and more intentional, but did you know that Twitter deprioritizes tweets that tag banned accounts?
 When we were planning a [deep learning workshop](https://ben-heil.github.io/2020-10-08-workshop/), my co-organizer and PI found that their tweets discussing the workshop got much less engagement when they tagged me.
