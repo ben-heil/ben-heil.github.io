@@ -14,9 +14,10 @@ This post will take the position that you should not do a PhD.
 As always, questions, comments, concerns, angry retorts, and any relevant sea shanties should be [sent to me via Twitter](https://twitter.com/autobencoder).
 
 This post is not comprehensive.
-There are certainly valid reasons to not apply to grad schools that vary person to person.
+Everyone has a different background, and the factors I consider important may not be important for everyone.
+There are certainly valid reasons to not apply to grad schools that vary from person to person.
 For example, uprooting your life and moving to a new city may not be feasible for you.
-I selected the topics I did because they are fairly universal.
+I selected the topics I did because I expect they will apply to most people.
 Most people will make less money while doing a PhD, [many find grad school emotionally difficult](https://www.nature.com/articles/d41586-020-02439-6), and all PhD students will have to interact with the academic system.
 
 It's also worth mentioning my background as it informs my perspective.
@@ -48,8 +49,9 @@ A six figure decrease in student loans/increase in your net worth is a big chang
 ---
 
 ## Emotional Difficulty
-Grad school is hard.
-In fact, it's hard for a number of reasons:
+[One in four people](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6432885/) doing a PhD program show signs of depression and one in five show signs of anxiety.
+Maintaining a healthy mental state in grad school is hard, and there are several factors working against you.
+Here's a sample of those challenges:
 
 #### Isolation
 The goal of a PhD is to become the world's leading expert in some narrow slice of your field.
@@ -67,6 +69,10 @@ These experiments are still useful, because you gain knowledge about your resear
 Research doesn't come with a progress bar, you have no way of knowing "if I just run five more experiments I'll finally understand what's happening."
 You just keep doing experiments until you realize how to solve a problem or decide you need to work on something else.
 
+This lack of feedback is baked into the structure of the academic system to some degree.
+Instead of receiving frequent feedback in the form of grades, you write papers which are published [months later](https://quantixed.org/2015/03/09/waiting-to-happen-publication-lag-times-in-cell-biology-journals/).
+By the time you receive the good news that your paper will be published, you've already been working on a different project for weeks.
+
 In high school I never understood how someone could do something as boring and painful as become a cross-country runner.
 In grad school, I found the "work harder -> run farther" feedback loop was a welcome reprieve from the "work harder -> ???" feedback loop as a PhD student.
 
@@ -75,6 +81,7 @@ Grad students are paid a salary, not a wage.
 That is to say that if you work an eighty hour week, you will make no more money than if you went on vacation.
 However, the win condition for a PhD is to produce enough research in your field that you are acknowledged as an expert by your professor and thesis committee.
 As a result, you end up calculating whether the breaks you take are getting you well-needed rest or just delaying your graduation that much longer.
+The logical conclusion of these pressures is that many grad students end up [working long hours](https://www.nature.com/articles/d41586-019-03459-7).
 
 ---
 
@@ -82,18 +89,6 @@ As a result, you end up calculating whether the breaks you take are getting you 
 Academia isn't a bad place (says the person with a vested interest in graduate degrees being considered valuable).
 However, there are bad reasons to go into academia.
 This section shouldn't be read as "academia is the worst, go elsewhere", but instead "here are some realities of the academic world, be warned."
-
-#### Academia is Sales
-A common reason to become an academic is to have the freedom to choose what to research, but often your freedom to research what you want is a function of your ability to do sales.
-
-As a grad student, what you research is heavily dependent on your lab's focus.
-If you want to do something else, you have to convince your boss that it's a good idea[^PI].
-If that fails, you'll have to convince a panel of scientists to fund your ideas via a [fellowship](https://www.nsfgrfp.org/) instead.
-If you're fortunate enough to become a professor, you will ostensibly have control over your lab's research direction.
-You will, of course, have to convince a [granting agency](https://www.ascb.org/careers/where-to-find-research-funding-opportunities/) to fund that research direction though.
-
-As an academic, you'll have an unparalleled ability to choose what you work on.
-However, that freedom and the future of your career are circumscribed by your ability to convince others that what you're doing is important.
 
 #### Not Just More Undergrad
 There is a sort of person[^nerd] who enjoys the structure of undergraduate life.
@@ -120,6 +115,26 @@ If your goal is to become a tenured professor, you will have to repeatedly move 
 An average timeline is around six years of doing a PhD, [4.5 years of being a postdoc](https://nexus.od.nih.gov/all/2012/06/29/postdoctoral-researchers-facts-trends-and-gaps/), and six years to get tenure.
 That is to say that even if everything goes well, you're still not getting a tenured position until you're 40+ years old.
 
+Having a PhD can also [work against you](https://www.sciencemag.org/careers/2014/10/overqualified-or-underqualified) in the industry job market.
+While many technical jobs like to hire PhDs, the further away from the very specific thing you have been training for you get, the less relevant skills you will have.
+
+#### Academia is Sales
+A common reason to become an academic is to have the freedom to choose what to research, but often your freedom to research what you want is a function of your skill as a salesperson.
+Your success at every step of your job advancement (writing papers, giving job talks, presenting at conferences) is at least partially dependent on your ability to sell the idea that your work is important.
+
+For example, as a grad student what you research is heavily dependent on your lab's focus.
+If you want to do something else, you have to convince your boss that it's a good idea[^PI].
+If that fails, you'll have to convince a panel of scientists to fund your ideas via a [fellowship](https://www.nsfgrfp.org/) instead.
+If you're fortunate enough to become a professor, you will ostensibly have control over your lab's research direction.
+You will, of course, have to convince a [granting agency](https://www.ascb.org/careers/where-to-find-research-funding-opportunities/) to fund that research direction though.
+
+As an academic, you'll have an unparalleled ability to choose what you work on.
+However, that freedom and the future of your career are circumscribed by your ability to persuade others that your work matters.
+
+#### Inability to Switch Workplaces
+A PhD lasts around six years, and you'll spend five of those years in the same lab(s).
+If you decide to leave your thesis lab, you will often have to change projects, leading to a delay in your graduation time.
+Since you're locked into your work arrangement, and lab heads aren't trained in management, [you can end up in toxic lab situations](https://www.nature.com/articles/d41586-018-05143-8) that are difficult to escape.
 
 ---
 
@@ -141,10 +156,12 @@ If I have failed to dissuade you from doing a PhD, maybe you should [read it](#T
 
 - ["...although few PhD holders end up unemployed, it is not clear that spending years securing this high-level qualification is worth it for a job as, for example, a high-school teacher."](https://www.nature.com/articles/472276a).
 
-- shouldigetaphd.com - I haven't actually read the book, but having listened to to the author talk about PhD programs before on podcasts I'm fairly confident the answer will be "No."
+- [shouldigetaphd.com](shouldigetaphd.com) - I haven't actually read the book, but having listened to to the author talk about PhD programs before on podcasts I'm fairly confident the answer will be "No."
+
+---
 
 ### Acknowledgements 
-Thanks to [Rachel Ungar](https://twitter.com/raungar) for reading through an early version.
+Thanks to [Rachel Ungar](https://twitter.com/raungar) for suggestions and proofreading.
 
 ### Footnotes
 
