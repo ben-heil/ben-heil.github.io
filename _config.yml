@@ -4,7 +4,7 @@
 # baseurl is the website's URL without the hostname
 
 # If you are building a simple GitHub user page (https://username.github.io) then use these settings:
-url: "https://ben-heil.github.io"
+url: "https://autobencoder.com"
 baseurl: ""
 
 # If you are building a GitHub project page then use these settings:
@@ -25,10 +25,13 @@ description: ML | Comp Bio
 navbar-links:
   About: "aboutme"
   Blog: "blog"
+  Archive: "archive"
+  Tags: "tags"
+
 
 # Image to show in the navigation bar - image must be a square (width = height)
 # Remove this parameter if you don't want an image in the navbar
-avatar: "/img/IMG_9857.jpg"
+avatar: "/img/small_face.jpg"
 
 # If you want to have an image logo in the top-left corner instead of the title text,
 # then specify the following parameter
@@ -93,7 +96,7 @@ share-links-active:
 
 # How to display the link to the website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "ben-heil.github.io"
+url-pretty: "autobencoder.com"
 
 # --- Web Statistics Section --- #
 
@@ -248,6 +251,7 @@ prose:
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
+  - jekyll_picture_tag
 
 # Beautiful Jekyll / Dean Attali
 # 2fc73a3a967e97599c9763d05e564189

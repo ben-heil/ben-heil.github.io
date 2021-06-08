@@ -561,6 +561,17 @@ footer .footer-custom-content {
 }
 /* --- Post and page headers --- */
 
+.recent-post-header h1{
+  font-size: 3rem;
+  text-align: center;
+}
+.recent-post-header hr{
+	height: 1px;
+	background-color: #C0C0C0
+
+}
+
+
 .intro-header {
   margin: 5rem 0 1.25rem;
   position: relative;

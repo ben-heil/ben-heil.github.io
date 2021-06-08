@@ -32,11 +32,11 @@ layout: page
       {% endif %}
       <div class="post-entry">
         {% assign excerpt_length = site.excerpt_length | default: 50 %}
-		{% if post.description %}
-		{{ post.description}}
-		{% else %}
+        {% if post.description %}
+        {{ post.description}}
+        {% else %}
         {{ post.excerpt | strip_html | xml_escape | truncatewords: excerpt_length }}
-		{% endif %}
+        {% endif %}
         {% assign excerpt_word_count = post.excerpt | number_of_words %}
       </div>
     </div>

@@ -4,9 +4,14 @@ layout: page
 
 {{ content }}
 
+
 {% assign posts = paginator.posts | default: site.posts %}
 
 <div class="posts-list">
+	<div class="recent-post-header">
+	<h1> Recent Blog Posts: </h1>
+	<hr>
+	</div>
   {% for post in posts %}
   <article class="post-preview">
     <a href="{{ post.url | relative_url }}">
@@ -40,9 +45,6 @@ layout: page
         {{ post.excerpt | strip_html | xml_escape | truncatewords: excerpt_length }}
         {% endif %}
         {% assign excerpt_word_count = post.excerpt | number_of_words %}
-        {% if post.content != post.excerpt or excerpt_word_count > excerpt_length %}
-          <a href="{{ post.url | relative_url }}" class="post-read-more">[Read&nbsp;More]</a>
-        {% endif %}
       </div>
     </div>
 
