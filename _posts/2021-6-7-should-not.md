@@ -53,6 +53,7 @@ A six figure decrease in student loans/increase in your net worth is a big chang
 Maintaining a healthy mental state in grad school is hard, and there are several factors working against you.
 Here's a sample of those challenges:
 
+<a id="isolation"></a>
 #### Isolation
 The goal of a PhD is to become the world's leading expert in some narrow slice of your field.
 As you voyage out to the frontier of knowledge, the number of people you can talk to about your work decreases.
