@@ -142,9 +142,7 @@ Since you're locked into your work arrangement, and lab heads aren't trained in 
 ## Conclusion
 PhD life isn't all bad.
 In fact, I have an entire post about the good parts going up next week.
-If I have failed to dissuade you from doing a PhD, maybe you should [read it](#TODO).
-
-*Note, the link won't work until the post is published, so if you're reading this before 6/16/21 it won't go anywhere*
+If I have failed to dissuade you from doing a PhD, maybe you should [read it](/2021-06-16-should).
 
 ---
 
