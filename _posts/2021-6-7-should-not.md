@@ -30,6 +30,7 @@ With the preliminaries out of the way, here are three reasons you shouldn't appl
 
 ---
 
+<a id="money"></a>
 ## Money
 Financially, you [shouldn't expect to make more money](https://www.sciencemag.org/careers/2008/04/phdollars-does-grad-school-make-financial-sense) in the long run by doing a PhD, and in the short run you'll make less.
 If you have a CS background, you can go into industry as a software engineer or data scientist and make more money than you will as a PhD student.
