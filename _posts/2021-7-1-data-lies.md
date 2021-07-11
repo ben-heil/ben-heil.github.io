@@ -74,6 +74,25 @@ The issue is that because of [confirmation bias](#TODO) I didn't weight findings
 When someone said "Fascinating that Lucina ranks up top, yet the darkest color in her row appears to be.... Marth," I didn't treat that as evidence against the data, I rationalized something to the effect of "Lucina and Marth are the same character, but Marth deals more damage with good spacing. Given that their [mirror match](#TODO) will be all about spacing, Marth would win," and treated that as further evidence for my data being valid.
 Had I seen all the strange conclusions that the dataset implied and said "maybe this data is wrong" instead of "maybe I can explain this," I might have caught the bug before publication.
 
+## Why this Matters
+You're probably thinking, "Sure Ben, I get it, you have demonstrably failed at both research and programming. But why should I care?"
+
+Learning how the world works is harder than you think, [even taking into account the fact that you know that](https://en.wikipedia.org/wiki/Hofstadter%27s_law).
+I knew about all the mistakes I made going in, but I still managed to make them.
+These mistakes show up time and time again in research, so it's imporant to be aware of them.
+For example:
+
+### Assuming code works
+The assumption that research code is correct is obviously false. 
+Even well-maintained software developed by strong programmers like BLAST [occasionally has major bugs](https://academic.oup.com/bioinformatics/article/35/9/1613/5106166).
+The idea that there are no errors in all the one-off analysis code that computational biology is built on is obviously untrue.
+It's possible to reduce the rate of bugs (and make them easier to discover) with [reproducible programming practices](/2020-06-16-mustdo/), but it's important to always be questioning your code's results.
+
+### Assuming data represents reality
+
+
+### Mistaking hypotheses for evidence
+GANs / storytelling
 
 
 
