@@ -89,7 +89,11 @@ The idea that there are no errors in all the one-off analysis code that computat
 It's possible to reduce the rate of bugs (and make them easier to discover) with [reproducible programming practices](/2020-06-16-mustdo/), but it's important to always be questioning your code's results.
 
 ### Assuming data represents reality
+In the poster "[Neural correlates of interspecies perspective taking in the post-mortem Atlantic Salmon: An argument for multiple comparisons correction](http://prefrontal.org/files/posters/Bennett-Salmon-2009.jpg)," Bennett et al. put a dead fish through an fMRI machine.
+They point out that if you fail to properly correct for multiple testing, you see a lot more brain activity than you'd expect in a dead fish.
 
+While spurious correlations are pretty well known ([relavent XKCD](https://xkcd.com/882/)), the idea of data representing reality comes up a lot in models that learn from data.
+If you assume that a dataset consisting entirely of individuals of European ancestry is representative of reality, you end up with [polygenic risk scores that fail to work on other populations](https://www.nature.com/articles/s41467-019-11112-0).
 
 ### Mistaking hypotheses for evidence
 GANs / storytelling
