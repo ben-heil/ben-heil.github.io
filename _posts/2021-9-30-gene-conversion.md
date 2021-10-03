@@ -11,7 +11,7 @@ Computational biologists often have to code in both Python and R.
 
 Using both languages in a single project is often necessary. 
 Either components of the project will rely on libraries in different languages, or all the Stack Overflow help for the components will be in R or Python only.
-However, if you can limit a project to a single language, then you'll have fewer dependencies and less installation time for future users.
+However, if you can limit a project to a single language, you'll have fewer dependencies and less installation time for future users.
 
 This post documents in Python one task that's already well-documented in R: converting [ENSEMBL ids](https://useast.ensembl.org/info/genome/stable_ids/index.html) to [gene symbols](http://www.informatics.jax.org/glossary/gene_symbol) and vice versa.
 
@@ -28,15 +28,15 @@ ensembl_to_gensymbol <- getBM(attributes = 'hgnc_symbol',
                               mart = ensembl)
 ```
 
-There are a number of variations on [this theme](https://bioinformatics.stackexchange.com/a/5230) that show up if you google "convert ensembl to gene symbol", and the parameters are pretty well documented [here](https://www.rdocumentation.org/packages/biomaRt/versions/2.28.0/topics/getBM).
-In short, you have `attributes`, which are the types of results you want (e.g. gene symbols), `filters`, which are the type of data you're passing in (e.g. ensembl gene ids), `values`, which are the data you want converted, and `mart` which is created in the previous step and tells biomaRt where to look for the info.
+There are several variations on [this theme](https://bioinformatics.stackexchange.com/a/5230) that show up if you google "convert ensembl to gene symbol," and the parameters are well documented [here](https://www.rdocumentation.org/packages/biomaRt/versions/2.28.0/topics/getBM).
+In short, you have `attributes`, which are the types of results you want (e.g. gene symbols), `filters`, which are the type of data you're passing in (e.g. ensembl gene ids), `values`, which are the data you want to be converted, and `mart` which is created in the previous step and tells biomaRt where to look for the info.
 <a id="python"></a>
 ## The Python Method
 
 We'll use the python [biomart package](https://pypi.org/project/biomart/) to make interacting with BioMart servers easier[^biomart].
 To install it, use `pip install biomart`.
 
-The Python version of the code is more verbose (though to be fair most of the code is for parsing the output into a dict), so I'll walk through it in chunks.
+The Python version of the code is more verbose (though, to be fair, most of the code is for parsing the output into a dict), so I'll walk through it in chunks.
 If you want the whole function for copy-pasting, [click here](https://gist.github.com/ben-heil/cffbebf8865795fe2efbbfec041da969) or scroll to the end of the section.
 
 -----
@@ -52,8 +52,8 @@ def get_ensembl_mappings():
 ```
 
 This first block makes a connection to the server and tells the library which dataset to use. 
-The first line won't typically need to be changed, but if you're working with organisms other than mice you may want to change your dataset.
-A list of available datasets can be found in the "Selecting a BioMart database and dataset" section of [this post](https://bioconductor.riken.jp/packages/3.4/bioc/vignettes/biomaRt/inst/doc/biomaRt.html).
+The first line won't typically need to be changed, but if you're working with organisms other than mice, you may want to change your dataset.
+You can find a list of available datasets in the "Selecting a BioMart database and dataset" section of [this post](https://bioconductor.riken.jp/packages/3.4/bioc/vignettes/biomaRt/inst/doc/biomaRt.html).
 
 -----
 
@@ -65,7 +65,7 @@ A list of available datasets can be found in the "Selecting a BioMart database a
 
 This list contains the different ids that we want to map to each other.
 The names of these attributes are dependent on the database, so you'll want to change them if you aren't mapping mouse gene ids to each other.
-If you're unsure of which attributes are present in your dataset, you can call `mart.show_attributes()` which will print them out.
+If you're unsure which attributes are present in your dataset, you can call `mart.show_attributes()` to print them out.
 
 -----
 
@@ -93,7 +93,7 @@ Instead, pass the gene ids as a list of values with your attribute as the key.
     data = response.raw.data.decode('ascii')                                    
 ```
 If you're familiar with the [requests](https://docs.python-requests.org/en/latest/) library, this statement might look familiar to you.
-It takes the request results and converts them from a binary string to an easier to work with text string.
+It takes the request results and converts them from a binary string to an easier-to-work-with text string.
 
 -----
 
@@ -115,8 +115,8 @@ It takes the request results and converts them from a binary string to an easier
         ensembl_to_genesymbol[ensembl_peptide] = gene_symbol                
 ```
 This part is all base python.
-Each line in the response from BioMart is a tab separated list containing the attributes you requested in the order you requested them.
-If that attribute doesn't have an entry (e.g. the gene doesn't code for a peptide), then the entry will empty instead.
+Each line in the response from BioMart is a tab-separated list containing the attributes you requested in the order you requested them.
+If that attribute doesn't have an entry (e.g. the gene doesn't code for a peptide), the entry will empty instead.
 
 Knowing this, you can split the line, assign the values you want to variables, and add each entry to the mapping dict.
 
@@ -165,8 +165,8 @@ Once you put all the pieces together, you get the function above.
 
 ## Conclusion
 Writing a project in two languages is painful.
-With luck, this information was the one piece that was missing, and now you can avoid one language entirely.
+With luck, this information was the one piece you were missing, and now you can avoid one language entirely.
 If not, hopefully it at least saved you some time.
 
 ### Footnotes
-[^biomart]: biomart is a Python package that interacts with BioMart web servers, not to be be mistaken with biomaRt, which is an R package for the same thing. I tried to get the capitalization correct to minimize confusion, but [capitalization is hard](https://twitter.com/SwiftOnSecurity/status/569989992233213952).
+[^biomart]: biomart is a Python package that interacts with BioMart web servers, not to be be mistaken for biomaRt, an R package for the same thing. I tried to get the capitalization correct to minimize confusion, but [capitalization is hard](https://twitter.com/SwiftOnSecurity/status/569989992233213952).
