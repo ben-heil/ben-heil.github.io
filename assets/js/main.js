@@ -1,5 +1,19 @@
 // Dean Attali / Beautiful Jekyll 2020
 
+function convertRemToPixels(rem) {    
+	// https://stackoverflow.com/questions/36532307/rem-px-in-javascript
+    return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
+}
+
+window.addEventListener('hashchange', function() {
+  var hash = window.location.hash
+  if (hash.startsWith('#fn:') || hash.startsWith('#fnref:')){
+    console.log(window.location.hash)
+    var offset = convertRemToPixels(3.125)
+    window.scrollTo(window.scrollX, window.scrollY - offset)
+  }
+}, false);
+
 var BeautifulJekyllJS = {
 
   bigImgEl : null,
