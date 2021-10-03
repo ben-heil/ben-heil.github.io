@@ -1,15 +1,13 @@
 ---
 layout: post
 title: How to Convert Gene ID Formats in Python
-description: "Changing ENSEMBL to gene symbol and back again"
+description: "From ENSEMBL to gene symbol and back again"
 cover-img: "/assets/img/traintracks.jpg"
 tags: ['comp bio', 'ensembl', 'gene names']
 ---
 
 ## Intro 
-Computational biologists often have to code in both Python and R.
-
-Using both languages in a single project is often necessary. 
+Computational biologists often have to use both Python and R in a single project.
 Either components of the project will rely on libraries in different languages, or all the Stack Overflow help for the components will be in R or Python only.
 However, if you can limit a project to a single language, you'll have fewer dependencies and less installation time for future users.
 
@@ -33,7 +31,7 @@ In short, you have `attributes`, which are the types of results you want (e.g. g
 <a id="python"></a>
 ## The Python Method
 
-We'll use the python [biomart package](https://pypi.org/project/biomart/) to make interacting with BioMart servers easier[^biomart].
+We'll use the Python [biomart package](https://pypi.org/project/biomart/) to make interacting with BioMart servers easier[^biomart].
 To install it, use `pip install biomart`.
 
 The Python version of the code is more verbose (though, to be fair, most of the code is for parsing the output into a dict), so I'll walk through it in chunks.
@@ -114,7 +112,7 @@ It takes the request results and converts them from a binary string to an easier
         ensembl_to_genesymbol[ensembl_gene] = gene_symbol                       
         ensembl_to_genesymbol[ensembl_peptide] = gene_symbol                
 ```
-This part is all base python.
+This part is all base Python.
 Each line in the response from BioMart is a tab-separated list containing the attributes you requested in the order you requested them.
 If that attribute doesn't have an entry (e.g. the gene doesn't code for a peptide), the entry will empty instead.
 
