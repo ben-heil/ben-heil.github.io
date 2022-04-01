@@ -24,9 +24,9 @@ description: ML | Comp Bio
 # List of links in the navigation bar
 navbar-links:
   About: "aboutme"
-  Blog: "blog"
-  Archive: "archive"
+  Blog: "archive"
   Tags: "tags"
+  Resume: "assets/ben_heil_resume.pdf"
 
 
 # Image to show in the navigation bar - image must be a square (width = height)
