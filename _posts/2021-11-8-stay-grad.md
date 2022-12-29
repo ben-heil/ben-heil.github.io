@@ -5,6 +5,11 @@ cover-img: "/assets/img/traintracks.jpg"
 tags: ['grad school', 'academia']
 --- 
 
+*In November 2021 I thought I might want to leave my PhD program.*
+*To help clarify my position I wrote this post and [its companion](../2021-11-08-leave-grad) from the perspective of my future  self having already made the decision.*
+*Eventually I chose to finish my PhD, and successfully defended in December of 2022*
+*While I have a different perspective on some things now (I became an applied scientist over an engineer!), I think these posts are a good look into how I thought about grad school at the time.*
+
 I've decided not to drop out of my PhD program.
 
 To some extent it's about keeping my options open.
@@ -23,7 +28,7 @@ Working for 2+ years on permutations of the same question is hellish to me, but 
 Being slotted into a specialized role as 'the transfer learning guy' and building variations of the same pipeline for the rest of my life would be far worse than my current work, even if it would pay better.
 
 In my heart of hearts, I'm afraid that if I were to leave I'd just be quitting because completing a PhD was too hard.
-While I don't think that's the case, and I have [pages](../2021-11-08-leave) of reasons I should go, I see myself as someone who runs towards difficulty rather than away from it.
+While I don't think that's the case, and I have [pages](../2021-11-08-leave-grad) of reasons I should go, I see myself as someone who runs towards difficulty rather than away from it.
 I'm reasonably confident that I can finish my PhD, but the only way to know for sure is to actually do it.
 
 ### Footnotes
