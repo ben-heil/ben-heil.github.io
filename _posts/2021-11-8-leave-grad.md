@@ -8,7 +8,7 @@ tags: ['grad school', 'academia']
 *In November 2021 I thought I might want to leave my PhD program.*
 *To help clarify my position I wrote this post and [its companion](../2021-11-08-stay-grad) from the perspective of my future  self having already made the decision.*
 *Eventually I chose to finish my PhD, and successfully defended in December of 2022*
-*While I have a different perspective on some things now (I became an applied scientist over an engineer!), I think these posts are a good look into how I thought about grad school at the time.*
+*While I have a different perspective on some things now (I became an applied scientist instead of an engineer!), I think these posts are a good look into how I thought about grad school at the time.*
 
 
 I've decided to leave my PhD program.
